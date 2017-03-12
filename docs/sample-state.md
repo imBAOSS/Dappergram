@@ -24,6 +24,7 @@
     id: 1,
     username: 'imbaoss',
     description: "Rockin' the gray and navy suit!",
+    upload_date: '2016-10-26',
     comments: {
       1: {
         username: 'MrDapper',
