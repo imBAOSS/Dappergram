@@ -52,6 +52,7 @@ Dappergram is a web application inspired by Instagram designed for men's fashion
 ###Bonus Features(TBD):
 
 - [ ] Upload photos
+- [ ] List of likers for photos
 - [ ] Hashtags
 - [ ] Search photos by hashtags
 - [ ] Discover Page
