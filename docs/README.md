@@ -15,4 +15,4 @@ Autogram is a web application inspired by Instagram designed for car enthusiasts
 - [ ] Following and photo feed
 
 ##Design Docs
-* [Wireframes] (/wireframes)
+* [Wireframes] (../wireframes)
