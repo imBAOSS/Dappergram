@@ -30,4 +30,8 @@
 ##Routes
 |Path  |Container|
 |------|---------|
-| "/" | "AuthFormContainer" |
+| "/" | "PhotoFeedContainer" |
+| "/sign-up" | "AuthFormContainer"  |
+| "/sign-in" | "AuthFormContainer"  |
+| "/:username" | "ProfilePageContainer" |
+| "/photo/:id" | "PhotoInfoContainer" |
