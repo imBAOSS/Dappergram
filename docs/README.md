@@ -29,23 +29,23 @@ Autogram is a web application inspired by Instagram designed for car enthusiasts
 
 **Objective:** Fully functioning Rails app with front-end authentication.
 
-###Phase 2: Images
+###Phase 2: Images (2 Days)
 
 **Objective:** Image storing and accessing within database. Display images on feed and profile page.
 
-###Phase 3: Likes
+###Phase 3: Likes (1 Day)
 
 **Objective:** Display number of likes on each image.
 
-###Phase 4: Commenting on images
+###Phase 4: Commenting on images (1 Day)
 
 **Objective:** Implement adding and displaying comments on images.
 
-###Phase 5: Following and photo feed
+###Phase 5: Following and photo feed (1 Day)
 
 **Objective:** Allow users to follow other users. Photo feed of photos from followed users.
 
-###Phase 6: Infinite scroll with lazy loading
+###Phase 6: Infinite scroll with lazy loading (1 Day)
 
 **Objective:** Infinite scrolling to allow for continuous viewing.
 
