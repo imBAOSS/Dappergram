@@ -1,11 +1,11 @@
-#Autogram
+#Dappergram
 
 [Heroku Link]
 [Trello Link]
 
 ##Minimum Viable Product
 
-Autogram is a web application inspired by Instagram designed for car enthusiasts. It is built using Ruby on Rails and React/Redux, and will implement the following features:
+Dappergram is a web application inspired by Instagram designed for men's fashion enthusiasts. It is built using Ruby on Rails and React/Redux, and will implement the following features:
 
 - [ ] Product README
 - [ ] Hosting on Heroku
