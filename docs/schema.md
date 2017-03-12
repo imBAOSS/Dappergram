@@ -9,6 +9,8 @@
 | password_digest | string    | not null                  |
 | session_token   | string    | not null, indexed, unique |
 | photo_url       | string    |                           |
+| name            | string    |                           |
+| description     | string    |                           |
 
 **photos**
 
@@ -42,4 +44,4 @@
 |-------------|-----------|--------------------------------|
 | id          | integer   | not null, primary key          |
 | follower_id | integer   | not null, indexed, foreign key |
-| followee_id | integer   | not null, indexed, foreign key |
+| following_id | integer   | not null, indexed, foreign key |
