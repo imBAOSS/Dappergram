@@ -1,4 +1,4 @@
-#Wireframs
+#Wireframes
 
 ##Splash Views
 
