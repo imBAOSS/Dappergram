@@ -4,6 +4,7 @@
 [Trello Link]
 
 ##Minimum Viable Product
+
 Autogram is a web application inspired by Instagram designed for car enthusiasts. It is built using Ruby on Rails and React/Redux, and will implement the following features:
 
 - [ ] Product README
@@ -15,4 +16,43 @@ Autogram is a web application inspired by Instagram designed for car enthusiasts
 - [ ] Following and photo feed
 
 ##Design Docs
-* [Wireframes] (../docs/wireframes)
+
+* [Wireframes](../docs/wireframes)
+* [React Components](../docs/component-hierarchy.md)
+* [API endpoints](../docs/api-endpoints.md)
+* [DB schema](../docs/schema.md)
+* [Sample State](../docs/sample-state.md)
+
+##Implementation Timeline
+
+###Phase 1: Back-End Setup and Front-End User Authentication (2 Days)
+
+**Objective:** Fully functioning Rails app with front-end authentication.
+
+###Phase 2: Images
+
+**Objective:** Image storing and accessing within database. Display images on feed and profile page.
+
+###Phase 3: Likes
+
+**Objective:** Display number of likes on each image.
+
+###Phase 4: Commenting on images
+
+**Objective:** Implement adding and displaying comments on images.
+
+###Phase 5: Following and photo feed
+
+**Objective:** Allow users to follow other users. Photo feed of photos from followed users.
+
+###Phase 6: Infinite scroll with lazy loading
+
+**Objective:** Infinite scrolling to allow for continuous viewing.
+
+###Bonus Features(TBD):
+
+- [ ] Upload photos
+- [ ] Hashtags
+- [ ] Search photos by hashtags
+- [ ] Discover Page
+- [ ] Direct messaging
