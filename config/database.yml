@@ -82,4 +82,4 @@ production:
   <<: *default
   database: Dappergram_production
   username: Dappergram
-  password: <%= ENV['AUTOGRAM_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DAPPERGRAM_DATABASE_PASSWORD'] %>
