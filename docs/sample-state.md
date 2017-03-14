@@ -1,13 +1,11 @@
 ```js
 {
-  currentUser: {
-    id: 1,
-    username: 'imbaoss'
-  },
-  forms: {
-    signUp: {errors: []},
-    logIn: {errors: []},
-    createComment: {errors: []}
+  session: {
+    currentUser: {
+      id: 1,
+      username: 'imbaoss'
+    },
+    errors: []
   },
   user: {
     id: 1,
