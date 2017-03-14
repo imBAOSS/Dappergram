@@ -22,8 +22,8 @@
     - CommentItem
 
 **ProfilePageContainer**
-- ProfilePageUserInfoContainer
-  - ProfilePageUserInfoItem
+- UserInfoContainer
+  - UserInfoItem
 - ProfileFeedContainer
   - ProfileFeedItem
 

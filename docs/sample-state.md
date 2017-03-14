@@ -36,6 +36,43 @@
         username: 'MrDapper'
       }
     }
+  },
+  photoFeed: {
+    1: {
+      photoId: 1,
+      username: 'imbaoss',
+      description: "Rockin' the gray and navy suit!",
+      upload_date: '2016-10-26',
+      comments: {
+        1: {
+          username: 'MrDapper',
+          body: "Great suit!"
+        }
+      },
+      likes: {
+        1: {
+          username: 'MrDapper'
+        }
+      }
+    },
+    2: {
+      photoId: 5,
+      username: 'imbaoss',
+      description: "I got that teal shirt!",
+      upload_date: '2016-10-26',
+      comments: {
+        1: {
+          username: 'MrDapper',
+          body: "Awesome color!"
+        }
+      },
+      likes: {
+        1: {
+          username: 'MrDapper'
+        }
+      }
+    }
+    3: //..
   }
 }
 ```
