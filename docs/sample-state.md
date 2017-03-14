@@ -14,7 +14,7 @@
     username: 'imbaoss',
     name: 'Bao Le'
     photo_url: 'photo.png',
-    description: "Software Engineer, Entrepreneur, Dog Lover and, Fitness and Men's Fashion Enthusiast"
+    description: "Software Engineer, Entrepreneur, Dog Lover and, Fitness and Men's Fashion Enthusiast",
     photos: [1, 2, 4, 6, 7, ...],
     followers: [2, 4, 6, 7, 19, 20, ...],
     following: [2, 3, 4, 5, 7, 9, 29, ...],
