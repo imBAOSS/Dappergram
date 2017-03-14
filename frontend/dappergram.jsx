@@ -5,7 +5,7 @@ import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  // const store = configureStore();
+  const store = configureStore();
 
   ReactDOM.render(<h1>Dappergram</h1>, root);
 });
