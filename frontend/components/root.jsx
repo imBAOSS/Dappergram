@@ -7,6 +7,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 // react components
 import App from './app';
 import AuthFormContainer from './AuthForm/auth_form_container';
+import PhotoFeedContainer from './PhotoFeed/photo_feed_container';
 
 const Root = ({store}) => (
   <Provider store={ store }>
@@ -14,6 +15,7 @@ const Root = ({store}) => (
       <Route path="/" component={ App }>
         <Route path="/signup" component={ AuthFormContainer }/>
         <Route path="/login" component={ AuthFormContainer }/>
+        <Route path="/feed" component={ PhotoFeedContainer }/>
       </Route>
     </Router>
   </Provider>
