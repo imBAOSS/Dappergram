@@ -49,15 +49,20 @@ class LogInForm extends React.Component {
             onClick={this.guestLogIn}
             className="button">Login as Guest</button>
         </div>
+        <div className="or-line">
+          <div className="line"></div>
+          <div className='or'>OR</div>
+          <div className="line"></div>
+        </div>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="input">
             <input
               type="text"
               onChange={this.update('username')}
               placeholder='Username'
               value={this.state.username}/>
           </div>
-          <div>
+          <div className="input">
             <input
               type="text"
               onChange={this.update('password')}
@@ -68,10 +73,12 @@ class LogInForm extends React.Component {
             <input
               type="submit"
               value="Log in"
-              className="button"/>
+              className="submit-button"/>
           </div>
         </form>
-        {this.props.errors}
+        <div>
+          {this.props.errors}
+        </div>
       </div>
     );
   }

@@ -75,10 +75,16 @@ body, button, input, textarea {
 .auth-header > h1 {
   display: flex;
   justify-content: center;
-  font-size: 51px;
+  font-size: 60px;
+  font-family: $cookie-cursive;
 }
 
-.auth-header > h4 {
+a {
+  margin-left: 4px;
+  color: $bright-blue;
+}
+
+div > h4 {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -106,6 +112,39 @@ input {
   margin: 15px 40px 0;
 }
 
+button.button{
+  height: 36px;
+}
+
+.or-line {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 40px 10px;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.or {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  color: $gray;
+  width: 268px;
+  margin: inherit;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  height: 1px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  position: relative;
+  box-sizing: border-box;
+  color: $lighter-gray;
+}
+
 button, .button, .submit-button {
   display: flex;
   justify-content: center;
@@ -114,7 +153,9 @@ button, .button, .submit-button {
   font-weight: 600;
   background: $bright-blue;
   border-color: $bright-blue;
+  border-radius: 3px;
   color: $white;
+  font-size: 16px;
 }
 
 // button, .submit-button {

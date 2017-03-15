@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
   if (window.currentUser) {
-    const preLoadedState = {session: {currentUser: window.currentUser}};
+    const preLoadedState = {session: {currentUser: window.currentUser, errors: []}};
     store = configureStore(preLoadedState);
   } else {
     store = configureStore();

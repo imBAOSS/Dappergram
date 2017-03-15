@@ -43,10 +43,15 @@ class SignUpForm extends React.Component {
           <h1>Dappergram</h1>
           <h4>Sign up to see photos from your friends.</h4>
         </div>
-        <div>
+
           <button
             onClick={this.guestLogIn}
-            className="button">Login as Guest</button>
+            className='button'>Login as Guest</button>
+
+        <div className="or-line">
+          <div className="line"></div>
+          <div className='or'>OR</div>
+          <div className="line"></div>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="input">
