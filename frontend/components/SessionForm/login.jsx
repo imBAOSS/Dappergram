@@ -43,25 +43,33 @@ class LogInForm extends React.Component {
         <div className="auth-header">
           <h1>Dappergram</h1>
           <br/>
-          <button onClick={this.guestLogIn}>Login as Guest</button>
+        </div>
+        <div>
+          <button
+            onClick={this.guestLogIn}
+            className="button">Login as Guest</button>
         </div>
         <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            onChange={this.update('username')}
-            placeholder='Username'
-            value={this.state.username}/>
-            <br/>
-          <input
-            type="text"
-            onChange={this.update('password')}
-            placeholder='Password'
-            value={this.state.password}/>
-            <br/>
-          <input
-            type="submit"
-            value="Log in"
-            className="submit-button"/>
+          <div>
+            <input
+              type="text"
+              onChange={this.update('username')}
+              placeholder='Username'
+              value={this.state.username}/>
+          </div>
+          <div>
+            <input
+              type="text"
+              onChange={this.update('password')}
+              placeholder='Password'
+              value={this.state.password}/>
+          </div>
+          <div>
+            <input
+              type="submit"
+              value="Log in"
+              className="button"/>
+          </div>
         </form>
         {this.props.errors}
       </div>

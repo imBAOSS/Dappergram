@@ -1,35 +1,70 @@
-.splash-image {
-  width: 50%;
-  height: 600px;
-  background-color: #FAFAFA;
-  background-image: image-url('splash_page_phone.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.auth-page {
-  display: flex;
-  flex-direction: row;
-  max-width: 935px;
-  width: 100%;
-  height: 50%;
-}
-
-.form,
-.login-form,
-.signup-form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .main {
   width: auto;
   // height: 100vh;
 }
 
+body, button, input, textarea {
+  font-family: $proxima-nova;
+  font-size: 14px;
+}
+
+.auth-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 935px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.splash-image {
+  flex-basis: 454px;
+  height: 618px;
+  box-sizing: border-box;
+  background-image: image-url('splash_page_phone.png');
+  background-size: 454px 618px;
+  background-repeat: no-repeat;
+  align-items: stretch;
+  align-self: center;
+  margin-left: -35px;
+  margin-right: -15px;
+}
+
 .form {
-  width: 50%;
-  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  max-width: 350px;
+  flex: 1;
+}
+
+.login-form,
+.signup-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid $light-gray;
+  margin: 0 0 10px;
+  padding: 10px 0;
+}
+
+.input {
+  justify-content: center;
+  margin: 0 40px 6px;
+  border-radius: 3px;
+}
+
+.redirect {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 25px 0;
+  border: 1px solid $light-gray;
 }
 
 .auth-header {
@@ -40,24 +75,53 @@
 .auth-header > h1 {
   display: flex;
   justify-content: center;
+  font-size: 51px;
 }
 
 .auth-header > h4 {
   display: flex;
   justify-content: center;
+  text-align: center;
+  font-size: 17px;
+  color: $gray;
+  width: 268px;
+  margin: 22px auto 8px;
+}
+
+form {
+  box-sizing: border-box;
 }
 
 input {
   border: 1px solid black;
-  width: 100%;
+  width: 268px;
   padding: 9px 8px 7px 8px;
   box-sizing: border-box;
-  margin: 0 40px;
+  margin: 0;
+  border: 1px solid $light-gray;
+  border-radius: 3px;
 }
 
-button, .submit-button {
-  cursor: pointer;
-  display: block;
-  margin: auto;
-  width: auto;
+.button {
+  margin: 15px 40px 0;
 }
+
+button, .button, .submit-button {
+  display: flex;
+  justify-content: center;
+  width: 268px;
+  cursor: pointer;
+  font-weight: 600;
+  background: $bright-blue;
+  border-color: $bright-blue;
+  color: $white;
+}
+
+// button, .submit-button {
+//   justify-content: center;
+//   width: 268px;
+//   cursor: pointer;
+//   display: flex;
+//   margin: auto;
+//   width: auto;
+// }

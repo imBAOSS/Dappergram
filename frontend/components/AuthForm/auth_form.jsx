@@ -12,9 +12,19 @@ class AuthForm extends React.Component {
 
   redirectLink() {
     if (this.props.formType === 'login') {
-      return <p>Dont't have an account? <Link to='/signup'>Sign up</Link></p>;
+      return (
+        <div className="redirect">
+          Dont't have an account?
+          <Link to='/signup'> Sign up</Link>
+        </div>
+      );
     } else {
-      return <p>Have an account? <Link to='/login'>Log in</Link></p>;
+      return (
+        <div className="redirect">
+          Have an account?
+          <Link to='/login'> Log in</Link>
+        </div>
+      );
     }
   }
 

@@ -13,5 +13,13 @@
  *= require_reset
  *= require_self
  */
+ $bright-blue: #3897f0;
+ $light-gray: #e6e6e6;
+ $gray: #999;
+ $white: #fff;
+
+ $sans-serif: sans-serif;
+ $proxima-nova: "proxima-nova",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
  @import "css_reset";
  @import "auth_form";
