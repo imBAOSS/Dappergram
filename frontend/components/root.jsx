@@ -9,16 +9,27 @@ import App from './app';
 import AuthFormContainer from './AuthForm/auth_form_container';
 import PhotoFeedContainer from './PhotoFeed/photo_feed_container';
 
-const Root = ({store}) => (
-  <Provider store={ store }>
-    <Router history={ hashHistory }>
-      <Route path="/" component={ App }>
-        <Route path="/signup" component={ AuthFormContainer }/>
-        <Route path="/login" component={ AuthFormContainer }/>
-        <Route path="/feed" component={ PhotoFeedContainer }/>
-      </Route>
-    </Router>
-  </Provider>
-);
+const Root = ({store}) => {
+
+  const _redirectIfLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    debugger;
+    if (currentUser) {
+      replace("/feed");
+    }
+  };
+
+  return (
+    <Provider store={ store }>
+      <Router history={ hashHistory }>
+        <Route path="/" component={ App }>
+          <Route path="/signup" component={ AuthFormContainer } onEnter={ _redirectIfLoggedIn }/>
+          <Route path="/login" component={ AuthFormContainer } onEnter={ _redirectIfLoggedIn }/>
+          <Route path="/feed" component={ PhotoFeedContainer }/>
+        </Route>
+      </Router>
+    </Provider>
+  );
+};
 
 export default Root;
