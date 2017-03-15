@@ -76,7 +76,7 @@ class LogInForm extends React.Component {
               className="submit-button"/>
           </div>
         </form>
-        <div>
+        <div className="errors">
           {this.props.errors}
         </div>
       </div>

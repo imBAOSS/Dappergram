@@ -4,10 +4,17 @@ import { hashHistory, withRouter } from 'react-router';
 class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {email: '', name: '', username: '', password: ''};
+    this.state = {
+      email: '',
+      name: '',
+      username: '',
+      password: '',
+      errors: this.props.errors};
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.guestLogIn = this.guestLogIn.bind(this);
+    this.clearErrors = this.clearErrors.bind(this);
+    this.listErrors = this.listErrors.bind(this);
   }
 
   update(field) {
@@ -20,13 +27,31 @@ class SignUpForm extends React.Component {
     this.props.signup(user);
   }
 
+  clearErrors() {
+    this.setState({errors: []});
+  }
+
   componentDidUpdate() {
     this.redirectIfLoggedIn();
+  }
+
+  componentWillMount() {
+    this.clearErrors();
   }
 
   redirectIfLoggedIn() {
     if (this.props.loggedIn) {
       this.props.router.push("/feed");
+    }
+  }
+
+  listErrors() {
+    if (this.props.errors.length > 0) {
+      return (
+        this.props.errors.map((err,idx) =>
+          <li key={idx} className="error-details">{err}</li>
+        )
+      );
     }
   }
 
@@ -36,6 +61,7 @@ class SignUpForm extends React.Component {
   }
 
   render() {
+    const listErrors = this.listErrors();
 
     return (
       <div className='signup-form'>
@@ -89,7 +115,11 @@ class SignUpForm extends React.Component {
               className="submit-button"/>
           </div>
         </form>
-        {this.props.errors}
+        <div className="errors">
+          <ul>
+            {listErrors}
+          </ul>
+        </div>
       </div>
     );
   }

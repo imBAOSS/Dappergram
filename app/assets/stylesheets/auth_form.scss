@@ -119,7 +119,7 @@ button.button{
 .or-line {
   display: flex;
   flex-direction: row;
-  margin: 10px 40px 10px;
+  margin: 10px 40px;
   align-items: stretch;
   box-sizing: border-box;
 }
@@ -158,11 +158,14 @@ button, .button, .submit-button {
   font-size: 16px;
 }
 
-// button, .submit-button {
-//   justify-content: center;
-//   width: 268px;
-//   cursor: pointer;
-//   display: flex;
-//   margin: auto;
-//   width: auto;
-// }
+.errors {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 268px;
+  margin: 10px 40px;
+}
+
+li.error-details {
+  color: $red;
+}
