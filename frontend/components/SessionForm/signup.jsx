@@ -32,7 +32,7 @@ class SignUpForm extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className='signup-form'>
         <div>
           <h1>Dappergram</h1>
           <h4>Sign up to see photos from your friends.</h4>
@@ -56,7 +56,10 @@ class SignUpForm extends React.Component {
             placeholder='Password'
             value={this.state.password}/>
             <br/>
-          <input type="submit" value="Sign up"/>
+          <input
+            type="submit"
+            value="Sign up"
+            className="submit-button"/>
         </form>
         {this.props.errors}
       </div>

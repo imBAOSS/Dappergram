@@ -1,0 +1,41 @@
+.splash-image {
+  width: 50%;
+  height: 600px;
+  background-color: #FAFAFA;
+  background-image: image-url('splash_page_phone.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.auth-page {
+  display: flex;
+  width: 50%;
+  height: 50%;
+}
+
+.form,
+.login-form,
+.signup-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.auth-header {
+  display: block;
+  margin: auto;
+}
+
+.auth-header > h1 {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  border: 1px solid black;
+}
+
+button, .submit-button {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}

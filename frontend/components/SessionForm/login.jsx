@@ -39,9 +39,10 @@ class LogInForm extends React.Component {
   render() {
 
     return (
-      <div>
-        <div>
+      <div className="login-form">
+        <div className="auth-header">
           <h1>Dappergram</h1>
+          <br/>
           <button onClick={this.guestLogIn}>Login as Guest</button>
         </div>
         <form onSubmit={this.handleSubmit}>
@@ -57,7 +58,10 @@ class LogInForm extends React.Component {
             placeholder='Password'
             value={this.state.password}/>
             <br/>
-          <input type="submit" value="Log in"/>
+          <input
+            type="submit"
+            value="Log in"
+            className="submit-button"/>
         </form>
         {this.props.errors}
       </div>

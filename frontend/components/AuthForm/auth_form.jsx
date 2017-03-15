@@ -30,8 +30,9 @@ class AuthForm extends React.Component {
         loggedIn={this.props.loggedIn}/>;
 
     return (
-      <div>
-        <div>
+      <div className='auth-page'>
+        <div className="splash-image"/>
+        <div className='form'>
           { form }
           { this.redirectLink() }
         </div>
