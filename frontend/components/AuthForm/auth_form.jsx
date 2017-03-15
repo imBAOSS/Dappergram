@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 import SignUpForm from '../SessionForm/signup';
 import LogInForm from '../SessionForm/login';
@@ -20,13 +20,19 @@ class AuthForm extends React.Component {
 
   render() {
     let form = this.props.formType === "login" ?
-    <LogInForm login={this.props.login} errors={this.props.errors}/> :
-      <SignUpForm signup={this.props.signup} errors={this.props.errors}/>;
+    <LogInForm
+      login={this.props.login}
+      errors={this.props.errors}
+      loggedIn={this.props.loggedIn}/> :
+      <SignUpForm
+        signup={this.props.signup}
+        errors={this.props.errors}
+        loggedIn={this.props.loggedIn}/>;
 
     return (
       <div>
-        { form }
         <div>
+          { form }
           { this.redirectLink() }
         </div>
       </div>

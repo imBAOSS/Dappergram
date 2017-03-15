@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory, withRouter } from 'react-router';
 
 class LogInForm extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class LogInForm extends React.Component {
     this.state = {username: '', password: ''};
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogIn = this.guestLogIn.bind(this);
   }
 
   update(field) {
@@ -15,7 +17,23 @@ class LogInForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state);
+    const user = Object.assign({}, this.state);
+    this.props.login(user);
+  }
+
+  componentDidUpdate() {
+    this.redirectIfLoggedIn();
+  }
+
+  redirectIfLoggedIn() {
+    if (this.props.loggedIn) {
+      this.props.router.push("/feed");
+    }
+  }
+
+  guestLogIn() {
+    const user = {username: 'guest', password: 'password'};
+    this.props.login(user);
   }
 
   render() {
@@ -24,7 +42,7 @@ class LogInForm extends React.Component {
       <div>
         <div>
           <h1>Dappergram</h1>
-          <button>Login as Guest</button>
+          <button onClick={this.guestLogIn}>Login as Guest</button>
         </div>
         <form onSubmit={this.handleSubmit}>
           <input
@@ -47,4 +65,4 @@ class LogInForm extends React.Component {
   }
 }
 
-export default LogInForm;
+export default withRouter(LogInForm);

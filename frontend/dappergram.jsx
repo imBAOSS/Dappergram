@@ -5,10 +5,8 @@ import configureStore from './store/store';
 
 // === For Testing === //
 import * as SessionAPIUtil from './util/session_api_util';
+import { logout, login, signup } from './actions/session_actions';
 
-window.signup = SessionAPIUtil.signup;
-window.login = SessionAPIUtil.login;
-window.logout = SessionAPIUtil.logout;
 // =================== //
 
 
@@ -22,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
+  window.signup = signup;
+  window.login = login;
+  window.logout = logout;
   window.store = store;
   ReactDOM.render(<Root store={store}/>, root);
 });
