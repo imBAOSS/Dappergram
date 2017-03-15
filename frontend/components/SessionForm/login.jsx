@@ -69,7 +69,7 @@ class LogInForm extends React.Component {
               placeholder='Password'
               value={this.state.password}/>
           </div>
-          <div>
+          <div className='button'>
             <input
               type="submit"
               value="Log in"
