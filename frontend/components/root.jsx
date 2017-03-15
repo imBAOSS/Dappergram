@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 // react components
-import App from './app';
+import App from './App';
 import AuthFormContainer from './AuthForm/auth_form_container';
 import PhotoFeedContainer from './PhotoFeed/photo_feed_container';
 
