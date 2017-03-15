@@ -17,5 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
 
   window.store = store;
-  ReactDOM.render(<h1>Dappergram</h1>, root);
+  ReactDOM.render(<Root store={store}/>, root);
 });

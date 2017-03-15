@@ -3,11 +3,7 @@ import { Link } from 'react-router';
 
 const App = ({ children }) => (
   <div>
-    <header>
-      <Link to="/">
-        <h1>Dappergram</h1>
-      </Link>
-    </header>
+    <h1>Dappergram</h1>
     {children}
   </div>
 );
