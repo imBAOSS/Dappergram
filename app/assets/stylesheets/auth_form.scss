@@ -20,6 +20,14 @@
   flex-direction: column;
 }
 
+.main {
+  width: auto;
+}
+
+.form {
+  width: 50%;
+}
+
 .auth-header {
   display: block;
   margin: auto;
@@ -32,10 +40,14 @@
 
 input {
   border: 1px solid black;
+  width: 100%;
+  padding: 9px 8px 7px 8px;
+  box-sizing: border-box;
 }
 
 button, .submit-button {
   cursor: pointer;
   display: block;
   margin: auto;
+  width: auto;
 }
