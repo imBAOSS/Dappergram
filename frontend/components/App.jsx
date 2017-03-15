@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const App = ({ children }) => (
-  <div className='main'>
+  <div id='root'>
     {children}
   </div>
 );

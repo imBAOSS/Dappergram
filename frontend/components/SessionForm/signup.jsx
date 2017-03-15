@@ -4,7 +4,7 @@ import { hashHistory, withRouter } from 'react-router';
 class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {name: '', username: '', password: ''};
+    this.state = {email: '', name: '', username: '', password: ''};
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -38,6 +38,12 @@ class SignUpForm extends React.Component {
           <h4>Sign up to see photos from your friends.</h4>
         </div>
         <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            onChange={this.update('email')}
+            placeholder='Email'
+            value={this.state.email}/>
+          <br/>
           <input
             type="text"
             onChange={this.update('name')}
