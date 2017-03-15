@@ -3,6 +3,7 @@ import React from 'react';
 class LogInForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {username: '', password: ''};
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,6 +14,8 @@ class LogInForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger;
+    e.preventDefault();
     this.props.login(this.state);
   }
 

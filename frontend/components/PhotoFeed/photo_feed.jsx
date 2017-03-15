@@ -9,7 +9,7 @@ class PhotoFeed extends React.Component {
 
     return (
       <div>
-        <button onClick={this.props.logout()} value='Log out'/>
+        <button onClick={this.props.logout}>Log out</button>
       </div>
     );
   }

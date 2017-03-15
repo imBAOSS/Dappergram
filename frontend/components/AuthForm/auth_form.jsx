@@ -20,8 +20,8 @@ class AuthForm extends React.Component {
 
   render() {
     let form = this.props.formType === "login" ?
-    <LogInForm props={this.props}/> :
-      <SignUpForm props={this.props}/>;
+    <LogInForm login={this.props.login} errors={this.props.errors}/> :
+      <SignUpForm signup={this.props.signup} errors={this.props.errors}/>;
 
     return (
       <div>
