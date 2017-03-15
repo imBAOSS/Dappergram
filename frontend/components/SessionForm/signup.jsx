@@ -33,7 +33,7 @@ class SignUpForm extends React.Component {
 
     return (
       <div className='signup-form'>
-        <div>
+        <div className='auth-header'>
           <h1>Dappergram</h1>
           <h4>Sign up to see photos from your friends.</h4>
         </div>
