@@ -47,6 +47,7 @@ class AuthForm extends React.Component {
       loggedIn={this.props.loggedIn}/> :
       <SignUpForm
         signup={this.props.signup}
+        login={this.props.login}
         errors={this.props.errors}
         loggedIn={this.props.loggedIn}/>;
 
