@@ -13,16 +13,22 @@ class PhotoFeed extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.props.fetchPhotos();
+  }
+
   render() {
     let imageUrl;
     if (this.props.session.currentUser) {
       imageUrl = <img src={this.props.session.currentUser.photo_url}/>;
     }
 
-    let feed =
-    (
-      <PhotoDetail className='photo-detail' />
-    )
+    let feed;
+    if (this.props.photos) {
+      feed = this.props.photos.map(photo => (
+        <li><PhotoDetail photo={photo}/></li>
+      ));
+    }
 
     return (
 
@@ -38,7 +44,9 @@ class PhotoFeed extends React.Component {
         </div>
 
         <div className='photo-feed'>
-          {feed}
+          <ul>
+            {feed}
+          </ul>
         </div>
       </div>
     );
