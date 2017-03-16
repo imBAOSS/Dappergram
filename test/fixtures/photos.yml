@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id                 :integer          not null, primary key
+#  user_id            :integer          not null
+#  photo_url          :string           not null
+#  description        :text
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  photo_file_name    :string
+#  photo_content_type :string
+#  photo_file_size    :integer
+#  photo_updated_at   :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined. If you add columns to the

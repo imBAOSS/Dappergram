@@ -2,15 +2,19 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  photo_url       :string
-#  name            :string
-#  description     :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                         :integer          not null, primary key
+#  username                   :string           not null
+#  password_digest            :string           not null
+#  session_token              :string           not null
+#  photo_url                  :string
+#  name                       :string
+#  description                :string
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  profile_photo_file_name    :string
+#  profile_photo_content_type :string
+#  profile_photo_file_size    :integer
+#  profile_photo_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -20,6 +24,8 @@ class User < ApplicationRecord
   validates :username, :session_token, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
   after_initialize :ensure_session_token
+
+  has_many :photos
 
   has_attached_file :profile_photo,
   default_url: "https://s3.amazonaws.com/dappergram-dev/users/profile_photos/000/000/005/original/default_profile_photo.jpeg"
