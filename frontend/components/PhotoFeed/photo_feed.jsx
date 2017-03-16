@@ -16,6 +16,7 @@ class PhotoFeed extends React.Component {
 
     return (
       <div>
+        <img src={this.props.session.currentUser.photo_url}/>
         <button onClick={this.props.logout}>Log out</button>
       </div>
     );
