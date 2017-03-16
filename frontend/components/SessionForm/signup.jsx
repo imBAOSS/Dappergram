@@ -13,7 +13,6 @@ class SignUpForm extends React.Component {
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.guestLogIn = this.guestLogIn.bind(this);
-    this.clearErrors = this.clearErrors.bind(this);
     this.listErrors = this.listErrors.bind(this);
   }
 
@@ -27,16 +26,8 @@ class SignUpForm extends React.Component {
     this.props.signup(user);
   }
 
-  clearErrors() {
-    this.setState({errors: []});
-  }
-
   componentDidUpdate() {
     this.redirectIfLoggedIn();
-  }
-
-  componentWillMount() {
-    this.clearErrors();
   }
 
   redirectIfLoggedIn() {

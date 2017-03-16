@@ -8,6 +8,11 @@ class AuthForm extends React.Component {
   constructor(props) {
     super(props);
     this.redirectLink = this.redirectLink.bind(this);
+    this.clearErrors = this.clearErrors.bind(this);
+  }
+
+  clearErrors() {
+    this.props.clearErrors();
   }
 
   redirectLink() {
@@ -16,7 +21,8 @@ class AuthForm extends React.Component {
         <div className="redirect">
           Dont't have an account?
           <Link
-            to='/signup'>
+            to='/signup'
+            onClick={this.clearErrors}>
             Sign up</Link>
         </div>
       );
@@ -25,7 +31,8 @@ class AuthForm extends React.Component {
         <div className="redirect">
           Have an account?
           <Link
-            to='/login'>
+            to='/login'
+            onClick={this.clearErrors}>
             Log in</Link>
         </div>
       );

@@ -18,11 +18,12 @@
  $lighter-gray: #c7c7c7;
  $gray: #999;
  $white: #fff;
- $red: ed4956;
+ $red: #ed4956;
 
  $sans-serif: sans-serif;
  $proxima-nova: "proxima-nova",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
  $cookie-cursive: 'Cookie', cursive;
 
  @import "css_reset";
+ @import url('https://fonts.googleapis.com/css?family=Cookie');
  @import "auth_form";

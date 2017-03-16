@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AuthForm from './auth_form';
-import { logout, login, signup } from "../../actions/session_actions";
+import { logout, login, signup, clearErrors } from "../../actions/session_actions";
 
 const mapStateToProps = (state, ownProps) => {
   let formType = ownProps.location.pathname.slice(1);
@@ -17,7 +17,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     logout: () => dispatch(logout()),
     login: user => dispatch(login(user)),
-    signup: user => dispatch(signup(user))
+    signup: user => dispatch(signup(user)),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

@@ -9,6 +9,7 @@ class LogInForm extends React.Component {
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.guestLogIn = this.guestLogIn.bind(this);
+    this.listErrors = this.listErrors.bind(this);
   }
 
   update(field) {
@@ -36,7 +37,18 @@ class LogInForm extends React.Component {
     this.props.login(user);
   }
 
+  listErrors() {
+    if (this.props.errors.length > 0) {
+      return (
+        this.props.errors.map((err,idx) =>
+          <li key={idx} className="error-details">{err}</li>
+        )
+      );
+    }
+  }
+
   render() {
+    const listErrors = this.listErrors();
 
     return (
       <div className="login-form">
@@ -77,7 +89,9 @@ class LogInForm extends React.Component {
           </div>
         </form>
         <div className="errors">
-          {this.props.errors}
+          <ul>
+            {listErrors}
+          </ul>
         </div>
       </div>
     );
