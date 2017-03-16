@@ -2,15 +2,15 @@
 
 ## Splash Views
 
-* [Sign Up](../docs/wireframes/Sign Up.png)
-* [Sign In](../docs/wireframes/Sign In.png)
+* [Sign Up](Sign Up.png)
+* [Sign In](Sign In.png)
 
 ## Content Views
 
-* [Homepage/Photo Feed](../docs/wireframes/Homepage.png)
-* [Profile Page](../docs/wireframes/Profile Page.png)
-* [Photo Detail](../docs/wireframes/Photo Detail.png)
+* [Homepage/Photo Feed](Homepage.png)
+* [Profile Page](Profile Page.png)
+* [Photo Detail](Photo Detail.png)
 
 ## Modal Views
 
-* [Photo Modal](../docs/wireframes/Photo Modal.png)
+* [Photo Modal](Photo Modal.png)
