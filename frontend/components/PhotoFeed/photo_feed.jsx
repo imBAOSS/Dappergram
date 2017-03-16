@@ -15,14 +15,24 @@ class PhotoFeed extends React.Component {
   render() {
     let imageUrl;
     if (this.props.session.currentUser) {
-      debugger;
       imageUrl = <img src={this.props.session.currentUser.photo_url}/>;
     }
 
     return (
       <div>
-        {imageUrl}
-        <button onClick={this.props.logout}>Log out</button>
+        <div className='nav-bar'>
+          <div className='home-icon'>
+            Home Icon
+          </div>
+
+          <div className='profile-icon'>
+            <button onClick={this.props.logout}>Log out</button>
+          </div>
+        </div>
+        <div className='photo-feed'>
+          {imageUrl}
+        </div>
+        
       </div>
     );
   }
