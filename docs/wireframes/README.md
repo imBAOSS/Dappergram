@@ -1,16 +1,16 @@
-#Wireframes
+# Wireframes
 
-##Splash Views
+## Splash Views
 
-* [Sign Up](Sign Up.png)
-* [Sign In](Sign In.png)
+* [Sign Up](../docs/wireframes/Sign Up.png)
+* [Sign In](../docs/wireframes/Sign In.png)
 
-##Content Views
+## Content Views
 
-* [Homepage/Photo Feed](Homepage.png)
-* [Profile Page](Profile Page.png)
-* [Photo Detail](Photo Detail.png)
+* [Homepage/Photo Feed](../docs/wireframes/Homepage.png)
+* [Profile Page](../docs/wireframes/Profile Page.png)
+* [Photo Detail](../docs/wireframes/Photo Detail.png)
 
-##Modal Views
+## Modal Views
 
-* [Photo Modal](Photo Modal.png)
+* [Photo Modal](../docs/wireframes/Photo Modal.png)
