@@ -1,0 +1,18 @@
+.feed {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 100vh;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.photo-feed {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

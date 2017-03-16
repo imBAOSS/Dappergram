@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, hashHistory } from 'react-router';
+import PhotoDetail from '../PhotoDetail/photo_detail';
 
 class PhotoFeed extends React.Component {
   constructor(props) {
@@ -18,11 +19,14 @@ class PhotoFeed extends React.Component {
       imageUrl = <img src={this.props.session.currentUser.photo_url}/>;
     }
 
-    let feed;
+    let feed =
+    (
+      <PhotoDetail className='photo-detail' />
+    )
 
     return (
 
-      <div>
+      <div className='feed'>
         <div className='nav-bar'>
           <div className='home-icon'>
             Home Icon
@@ -35,7 +39,6 @@ class PhotoFeed extends React.Component {
 
         <div className='photo-feed'>
           {feed}
-          {imageUrl}
         </div>
       </div>
     );
