@@ -15,6 +15,7 @@ class PhotoFeed extends React.Component {
   render() {
     let imageUrl;
     if (this.props.session.currentUser) {
+      debugger;
       imageUrl = <img src={this.props.session.currentUser.photo_url}/>;
     }
 
