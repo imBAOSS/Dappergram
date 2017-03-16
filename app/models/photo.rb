@@ -19,6 +19,23 @@ class Photo < ApplicationRecord
 
   belongs_to :user
 
-  has_attached_file :image, default_url: "husky.jpg"
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  has_attached_file :photo, default_url: "husky.jpg"
+  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
+
+  def days_since_uploaded
+    now = DateTime.now
+    seconds = (self.created_at - now).to_i
+
+    if seconds < 60
+      return "#{seconds}s"
+    elsif seconds >= 60 && seconds < 3600
+      return "#{seconds % 60}m"
+    elsif seconds >= 3600 && seconds < 43200
+      return "#{seconds % 3600}h"
+    elsif seconds >= 43200
+      return "#{seconds % 43200}d"
+    else
+      return "#{seconds % 43200}w"
+    end
+  end
 end
