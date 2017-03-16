@@ -3,6 +3,10 @@
   // height: 100vh;
 }
 
+#root {
+  background-color: $off-white;
+}
+
 body, button, input, textarea {
   font-family: $proxima-nova;
   font-size: 14px;
@@ -44,13 +48,10 @@ body, button, input, textarea {
 
 .login-form,
 .signup-form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  box-sizing: border-box;
   border: 1px solid $light-gray;
   margin: 0 0 10px;
   padding: 25px 0 10px;
+  background-color: $white;
 }
 
 .input {
@@ -65,6 +66,7 @@ body, button, input, textarea {
   justify-content: center;
   padding: 25px 0;
   border: 1px solid $light-gray;
+  background-color: $white;
 }
 
 .auth-header {
