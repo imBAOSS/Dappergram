@@ -21,6 +21,8 @@
   photo: {
     id: 1,
     username: 'imbaoss',
+    profile_photo_url: 'profile_photo.png',
+    photo_url: 'photo.png',
     description: "Rockin' the gray and navy suit!",
     upload_date: '2016-10-26',
     comments: {
@@ -39,6 +41,8 @@
     1: {
       photoId: 1,
       username: 'imbaoss',
+      profile_photo_url: 'profile_photo.png',
+      photo_url: 'photo.png',
       description: "Rockin' the gray and navy suit!",
       upload_date: '2016-10-26',
       comments: {
@@ -56,6 +60,8 @@
     2: {
       photoId: 5,
       username: 'imbaoss',
+      profile_photo_url: 'profile_photo.png',
+      photo_url: 'photo.png',
       description: "I got that teal shirt!",
       upload_date: '2016-10-26',
       comments: {
