@@ -22,7 +22,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_attached_file :profile_photo,
-  default_url: "http://s3.amazonaws.com/dappergram-dev/users/profile_photos/000/000/005/original/default_profile_photo.jpeg?1489641847"
+  default_url: "https://s3.amazonaws.com/dappergram-dev/users/profile_photos/000/000/005/original/default_profile_photo.jpeg"
   validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\z/
 
   def self.find_by_credentials(username, password)

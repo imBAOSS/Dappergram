@@ -18,7 +18,10 @@ class PhotoFeed extends React.Component {
       imageUrl = <img src={this.props.session.currentUser.photo_url}/>;
     }
 
+    let feed;
+
     return (
+
       <div>
         <div className='nav-bar'>
           <div className='home-icon'>
@@ -29,10 +32,11 @@ class PhotoFeed extends React.Component {
             <button onClick={this.props.logout}>Log out</button>
           </div>
         </div>
+
         <div className='photo-feed'>
+          {feed}
           {imageUrl}
         </div>
-        
       </div>
     );
   }
