@@ -24,11 +24,11 @@ class PhotoFeed extends React.Component {
     }
 
     let feed;
-    if (this.props.photos) {
-      feed = this.props.photos.map(photo => (
-        <li><PhotoDetail photo={photo}/></li>
-      ));
-    }
+    // if (this.props.photos) {
+    //   feed = this.props.photos.map(photo => (
+    //     <li><PhotoDetail photo={photo}/></li>
+    //   ));
+    // }
 
     return (
 

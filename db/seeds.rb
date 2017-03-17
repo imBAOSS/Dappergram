@@ -5,3 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+photo_list = File.readlines("../../photo_file_names.txt").map(&:chomp)
+prefix = 'https://s3.amazonaws.com/dappergram-dev/users/photos/'
+photos = photo_list.map { |file_name| prefix + file_name}
+
+profile_list = File.readlines("../../profile_photo_names.txt").map(&:chomp)
+profile_photos = profile_list.map { |file_name| prefix + file_name}
+
+User.create!(
+  name: "Guest User",
+  username: "guest",
+  password: "guest_password",
+  description: "I'm a guest!",
+  photo_url: 'https://s3.amazonaws.com/dappergram-dev/users/profile_photos/guest_profile_pic.png'
+)
+
+(1..14).each do |i|
+  name = Faker::Name.name
+  username = name.split(" ").join("-")
+
+  User.create!(
+    name: name,
+    username: username,
+    password: Faker::Internet.password(6, 12),
+    description: Faker::HarryPotter.quote,
+    photo_url: profile_photos[i]
+  )
+end
