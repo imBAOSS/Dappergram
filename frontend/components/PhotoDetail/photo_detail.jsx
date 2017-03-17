@@ -6,7 +6,7 @@ class PhotoDetail extends React.Component {
   }
 
   render() {
-
+    debugger;
     return (
       <div className='photo-detail'>
         <div className="user-info-header">

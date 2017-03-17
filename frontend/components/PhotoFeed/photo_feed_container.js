@@ -5,7 +5,6 @@ import { fetchPhotos } from '../../actions/photo_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-
   return {
     session: state.session,
     photos: state.photoFeed

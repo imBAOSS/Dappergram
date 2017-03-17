@@ -13,7 +13,7 @@ class PhotoFeed extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchPhotos();
   }
 
@@ -23,12 +23,10 @@ class PhotoFeed extends React.Component {
       imageUrl = <img src={this.props.session.currentUser.photo_url}/>;
     }
 
-    let feed;
-    if (this.props.photos) {
-      feed = this.props.photos.map(photo => (
-        <li><PhotoDetail photo={photo}/></li>
-      ));
-    }
+    let feed = Object.keys(this.props.photos).map(id => (
+        <li key={id}><PhotoDetail photo={this.props.photos[id]}/></li>
+      )
+    );
 
     return (
 

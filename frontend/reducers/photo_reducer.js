@@ -1,11 +1,7 @@
 import { RECEIVE_PHOTOS } from '../actions/photo_actions';
 import merge from 'lodash/merge';
 
-const _emptyPhoto = Object.freeze({
-  photoFeed: {}
-});
-
-const PhotoFeedReducer = (oldState = _emptyPhoto, action) => {
+const PhotoFeedReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
 
   switch (action.type) {
