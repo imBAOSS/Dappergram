@@ -1,6 +1,52 @@
+.photo-detail {
+  border: 1px solid $light-gray;
+  margin-bottom: 60px;
+}
+
 .user-info-header {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  height: 64px;
+  padding: 14px 20px;
+  box-sizing: border-box;
+}
+
+.user-profile-photo {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.user-info {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: hidden;
+}
+
+.username {
+  color: $darkest-gray;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 600;
+}
+
+.time {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.upload-time {
+  font-weight: 600;
+  color: $gray;
 }
 
 .interact {
@@ -8,9 +54,6 @@
   flex-direction: row;
 }
 
-.photo-detail {
-  border: 1px solid black;
-}
 
 .photo {
   display: flex;

@@ -24,7 +24,9 @@ class PhotoFeed extends React.Component {
     }
 
     let feed = Object.keys(this.props.photos).map(id => (
-        <li key={id}><PhotoDetail photo={this.props.photos[id]}/></li>
+        <PhotoDetail
+          key={id}
+          photo={this.props.photos[id]}/>
       )
     );
 
@@ -51,7 +53,7 @@ class PhotoFeed extends React.Component {
         </div>
 
         <div className='photo-feed'>
-          <div>
+          <div className='photo-feed-container'>
             {feed}
           </div>
         </div>

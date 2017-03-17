@@ -11,6 +11,7 @@
   flex-direction: row;
   border-bottom: 1px solid $light-gray;
   height: 77px;
+  background-color: $white;
 }
 
 .nav-elements {
@@ -71,9 +72,17 @@
   background-position: -156px -322px;
 }
 
-
 .photo-feed {
   display: flex;
   justify-content: center;
   align-content: center;
+  background-color: $off-white;
+}
+
+.photo-feed-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  margin: 0 auto;
+  max-width: 600px;
 }

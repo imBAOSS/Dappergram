@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
@@ -10,13 +11,16 @@ class PhotoDetail extends React.Component {
       <div className='photo-detail'>
         <div className="user-info-header">
           <div className="user-profile-photo">
-            User Profile Photo
+            <img src={`${this.props.photo.profile_photo_url}`}/>
           </div>
           <div className="user-info">
-            User Info
+            <Link
+              className="username"
+              onClick={"/feed"}>
+              {this.props.photo.username}</Link>
           </div>
           <div className="upload-time">
-            Time
+            <time>7h</time>
           </div>
         </div>
 
@@ -25,7 +29,7 @@ class PhotoDetail extends React.Component {
         </div>
 
         <div className="num-likes">
-          Over 9000 likes!
+          9001 likes!
         </div>
 
         <div className='photo-caption'>

@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 profile_list = File.readlines(File.join(Rails.root, 'db', 'profile_photo_names.txt')).first.split("\r")
-prefix = 'https://s3.amazonaws.com/dappergram-dev/users/photos/'
-profile_photos = profile_list.map { |file_name| prefix + file_name}
+profile_prefix = 'https://s3.amazonaws.com/dappergram-dev/users/profile_photos/'
+profile_photos = profile_list.map { |file_name| profile_prefix + file_name}
 
 User.create!(
   name: "Guest User",
@@ -32,7 +32,8 @@ User.create!(
 end
 
 photo_list = File.readlines(File.join(Rails.root, 'db', 'photo_file_names.txt')).first.split("\r")
-photos = photo_list.map { |file_name| prefix + file_name}
+photo_prefix = 'https://s3.amazonaws.com/dappergram-dev/users/photos/'
+photos = photo_list.map { |file_name| photo_prefix + file_name}
 
 photos.each do |photo|
   Photo.create!(
