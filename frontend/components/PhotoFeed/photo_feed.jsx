@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, hashHistory } from 'react-router';
+import { Link, withRouter, hashHistory } from 'react-router';
 import PhotoDetail from '../PhotoDetail/photo_detail.jsx';
 
 class PhotoFeed extends React.Component {
@@ -32,19 +32,28 @@ class PhotoFeed extends React.Component {
 
       <div className='feed'>
         <div className='nav-bar'>
-          <div className='home-icon'>
-            Home Icon
-          </div>
+          <div className='nav-elements'>
+            <div className='left-nav-buttons'>
+              <div className='home-icon-cont'>
+                <Link to="/feed" className='home-icon'></Link>
+              </div>
 
-          <div className='profile-icon'>
-            <button onClick={this.props.logout}>Log out</button>
+              <div className="dappergram">
+                <h1>Dappergram</h1>
+              </div>
+            </div>
+
+            <div className='profile-icon-cont'>
+              <Link onClick={this.props.logout}
+                className="profile-icon"></Link>
+            </div>
           </div>
         </div>
 
         <div className='photo-feed'>
-          <ul>
+          <div>
             {feed}
-          </ul>
+          </div>
         </div>
       </div>
     );
