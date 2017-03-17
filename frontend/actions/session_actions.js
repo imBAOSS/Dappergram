@@ -33,7 +33,7 @@ export const login = user => dispatch => (
   .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
-export const logout = () => dispatch => (
-  SessionAPIUtil.logout()
+export const logout = () => dispatch => {
+  return SessionAPIUtil.logout()
   .then(user => dispatch(receiveCurrentUser(null)))
-);
+};

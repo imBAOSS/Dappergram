@@ -7,6 +7,7 @@ class PhotoDetail extends React.Component {
   }
 
   render() {
+
     return (
       <div className='photo-detail'>
         <div className="user-info-header">
@@ -38,7 +39,7 @@ class PhotoDetail extends React.Component {
                 className='user-photo-caption'>
                 {this.props.photo.username}
               </Link>
-              Photo caption goes here
+              {this.props.photo.description}
             </p>
           </div>
 

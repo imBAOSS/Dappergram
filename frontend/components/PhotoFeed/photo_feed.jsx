@@ -31,27 +31,7 @@ class PhotoFeed extends React.Component {
     );
 
     return (
-
       <div className='feed'>
-        <div className='nav-bar'>
-          <div className='nav-elements'>
-            <div className='left-nav-buttons'>
-              <div className='home-icon-cont'>
-                <Link to="/feed" className='home-icon'></Link>
-              </div>
-
-              <div className="dappergram">
-                <h1>Dappergram</h1>
-              </div>
-            </div>
-
-            <div className='profile-icon-cont'>
-              <Link onClick={this.props.logout}
-                className="profile-icon"></Link>
-            </div>
-          </div>
-        </div>
-
         <div className='photo-feed'>
           <div className='photo-feed-container'>
             {feed}

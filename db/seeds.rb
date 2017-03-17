@@ -19,7 +19,7 @@ User.create!(
 )
 
 (1..14).each do |i|
-  name = Faker::Name.name
+  name = Faker::Name.unique.name
   username = name.split(" ").join("-")
 
   User.create!(
@@ -39,6 +39,6 @@ photos.each do |photo|
   Photo.create!(
     user_id: rand(1..14),
     photo_url: photo,
-    description: ""
+    description: Faker::ChuckNorris.fact
   )
 end

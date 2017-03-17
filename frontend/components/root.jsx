@@ -8,6 +8,7 @@ import { Router, Route, IndexRedirect, hashHistory } from 'react-router';
 import App from './App';
 import AuthFormContainer from './AuthForm/auth_form_container';
 import PhotoFeedContainer from './PhotoFeed/photo_feed_container';
+import ProfilePageContainer from './ProfilePage/profile_page_container';
 
 const Root = ({store}) => {
 
@@ -33,6 +34,7 @@ const Root = ({store}) => {
           <Route path="/signup" component={ AuthFormContainer } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/login" component={ AuthFormContainer } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/feed" component={ PhotoFeedContainer } onEnter={ _ensureLoggedIn }/>
+          <Route path="/profile" component={ ProfilePageContainer }/>
         </Route>
       </Router>
     </Provider>
