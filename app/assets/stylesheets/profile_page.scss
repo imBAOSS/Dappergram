@@ -4,8 +4,6 @@
   flex-direction: column;
   max-width: 935px;
   margin: 60px auto 0;
-  
-
 }
 
 .profile-header-cont {
@@ -18,10 +16,12 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  width: 100%;
 }
 
 .profile-picture-cont-cont {
   margin-right: 30px;
+  flex-grow: 1;
 }
 
 .profile-picture-cont {
@@ -44,6 +44,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  flex-grow: 2
 }
 
 .profile-user-info {
