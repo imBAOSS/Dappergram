@@ -1,12 +1,11 @@
-import { RECEIVE_PHOTOS, RECEIVE_PHOTO } from '../actions/photo_actions';
+import { RECEIVE_PHOTOS } from '../actions/photo_actions';
 import merge from 'lodash/merge';
 
 const _emptyPhoto = Object.freeze({
-  photo: {},
   photoFeed: {}
 });
 
-const PhotoReducer = (oldState = _emptyPhoto, action) => {
+const PhotoFeedReducer = (oldState = _emptyPhoto, action) => {
   Object.freeze(oldState);
 
   switch (action.type) {
@@ -17,12 +16,10 @@ const PhotoReducer = (oldState = _emptyPhoto, action) => {
           photos[idx] = photo
         });
       }
-      return merge({}, oldState, {photoFeed: photos});
-    case RECEIVE_PHOTO:
-      return merge({}, oldState, {photo: action.photo});
+      return merge({}, oldState, photos);
     default:
       return oldState;
   }
 }
 
-export default PhotoReducer;
+export default PhotoFeedReducer;

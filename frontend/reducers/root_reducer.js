@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import SessionReducer from './session_reducer';
-import PhotoReducer from './photo_reducer';
+import PhotoFeedReducer from './photo_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
-  photo: PhotoReducer
+  photoFeed: PhotoFeedReducer
 });
 
 export default RootReducer;

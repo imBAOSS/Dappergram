@@ -1,9 +1,9 @@
 class PhotosController < ApplicationController
   def index
     if params[:id]
-      @photos = Photo.find_by_user_id(params[:id])
+      @photos = Photo.find_by_user_id(params[:id]).reverse
     else
-      @photos = Photo.all
+      @photos = Photo.all.reverse
     end
 
     render 'api/photos/index'
