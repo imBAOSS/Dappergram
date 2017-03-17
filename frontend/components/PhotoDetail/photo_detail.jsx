@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
     super(props);
+    this.profilePage = this.profilePage.bind(this);
+  }
+
+  profilePage() {
+    this.props.router.push(`/profile/${this.props.photo.user_id}`);
   }
 
   render() {
@@ -12,12 +17,14 @@ class PhotoDetail extends React.Component {
       <div className='photo-detail'>
         <div className="user-info-header">
           <div className="user-profile-photo">
-            <img src={`${this.props.photo.profile_photo_url}`}/>
+            <img
+              src={`${this.props.photo.profile_photo_url}`}
+              onClick={this.profilePage}/>
           </div>
           <div className="user-info">
             <Link
               className="username"
-              onClick={"/feed"}>
+              onClick={this.profilePage}>
               {this.props.photo.username}</Link>
           </div>
           <div className="upload-time">
@@ -73,4 +80,4 @@ class PhotoDetail extends React.Component {
   }
 }
 
-export default PhotoDetail;
+export default withRouter(PhotoDetail);

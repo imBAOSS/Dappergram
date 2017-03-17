@@ -29,8 +29,9 @@
  $cookie-cursive: 'Cookie', cursive;
 
  @import "css_reset";
- @import "nav_bar";
  @import url('https://fonts.googleapis.com/css?family=Cookie');
+ @import "nav_bar";
  @import "auth_form";
  @import "photo_feed";
  @import "photo_detail";
+ @import "profile_page";

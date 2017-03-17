@@ -6,42 +6,49 @@ class ProfilePage extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchUser(this.props.user.id);
+    this.props.fetchUser(this.props.params.id);
   }
 
   render () {
-
     return (
-      <div>
-        <div className="profile-header">
-          <div className="profile-picture">
-            Profile Picture
-          </div>
-          <div className="user-info-header">
-            <div className="user-info">
-              <div className="username">
-                Username
-              </div>
-              <div className="follow-button">
-                Following
+      <div className='profile-page-cont'>
+        <div className="profile-header-cont">
+          <div className="profile-header">
+            <div className="profile-picture-cont-cont">
+              <div className="profile-picture-cont">
+                <img
+                  className="profile-picture"
+                  src={this.props.user.photo_url}/>
               </div>
             </div>
 
-            <div className="user-stats">
-              <div className="num-posts">
-                9001 posts
+            <div
+               className="profile-user-info-header">
+              <div className="profile-user-info">
+                <div className="username">
+                  {this.props.user.username}
+                </div>
+                <div className="follow-button">
+                  Following
+                </div>
               </div>
 
-              <div className="num-followers">
-                9001 followers
-              </div>
+              <div className="user-stats">
+                <div className="num-posts">
+                  9001 posts
+                </div>
 
-              <div className='num-following'>
-                9001 following
+                <div className="num-followers">
+                  9001 followers
+                </div>
+
+                <div className='num-following'>
+                  9001 following
+                </div>
               </div>
-            </div>
-            <div className="user-description">
-              User's profile description
+              <div className="user-description">
+                User's profile description
+              </div>
             </div>
           </div>
         </div>

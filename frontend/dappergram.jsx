@@ -8,6 +8,7 @@ import * as SessionAPIUtil from './util/session_api_util';
 import { logout, login, signup } from './actions/session_actions';
 import * as PhotosAPIUtil from './util/photo_api_util';
 import { fetchPhotos } from './actions/photo_actions';
+import fetchUser from './actions/user_actions';
 
 // =================== //
 
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
+  window.fetchUser = fetchUser;
   window.fetchPhotos = fetchPhotos;
   window.signup = signup;
   window.login = login;
