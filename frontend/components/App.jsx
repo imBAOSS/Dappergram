@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
-const App = ({ children }) => (
-  <div id='root'>
-    {children}
-  </div>
-);
 
-export default App;
+
+const App = ({ children, router }) => {
+    console.log(router);
+    return (<div id='root'>
+      {children}
+    </div>
+  );
+};
+
+export default withRouter(App);
