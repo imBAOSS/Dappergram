@@ -10,6 +10,7 @@
   height: 64px;
   padding: 14px 20px;
   box-sizing: border-box;
+  background-color: $white;
 }
 
 .user-profile-photo {
@@ -49,12 +50,6 @@
   color: $gray;
 }
 
-.interact {
-  display: flex;
-  flex-direction: row;
-}
-
-
 .photo {
   display: flex;
   justify-content: center;
@@ -64,6 +59,68 @@
 }
 
 img {
+  height: 100%;
+  width: 100%;
+}
+
+.photo-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px;
+}
+
+.num-likes {
+  margin-top: 20px;
+  margin-bottom: 7px;
+  color: $darkest-gray;
+  font-weight: 600;
+}
+
+.photo-caption {
+  margin-bottom: 7px;
+}
+
+.user-photo-caption, .commenter-user {
+  color: $darkest-gray;
+  font-weight: 600;
+  margin: 0 5px 0 0;
+}
+
+.interact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 9px;
+  border-top: 1px solid $lightest-gray;
+  min-height: 48px;
+}
+
+.add-comment-cont {
+  display: flex;
+  align-items: center;
+}
+
+.add-comment {
+  border-style: none;
+  font-size: 14px;
+  line-height: 17px;
+  width: 100%;
+  font-weight: 200;
+}
+
+.like-icon-cont {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 24px;
+  width: 24px;
+  padding: 8;
+  margin: 0 -1px 0 -5px;
+}
+
+.like-icon {
+  background-image: image-url('sprites.png');
+  background-position: -130px -322px;
   height: 100%;
   width: 100%;
 }
