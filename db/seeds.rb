@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-photo_list = File.readlines(File.join(Rails.root, 'db', 'photo_file_names.txt')).first.split('\r')
+photo_list = File.readlines(File.join(Rails.root, 'db', 'photo_file_names.txt')).first.split("\r")
 prefix = 'https://s3.amazonaws.com/dappergram-dev/users/photos/'
 photos = photo_list.map { |file_name| prefix + file_name}
 
-profile_list = File.readlines(File.join(Rails.root, 'db', 'profile_photo_names.txt')).first.split('\r')
+profile_list = File.readlines(File.join(Rails.root, 'db', 'profile_photo_names.txt')).first.split("\r")
 profile_photos = profile_list.map { |file_name| prefix + file_name}
 
 User.create!(
@@ -31,5 +31,13 @@ User.create!(
     password: Faker::Internet.password(6, 12),
     description: Faker::HarryPotter.quote,
     photo_url: profile_photos[i]
+  )
+end
+
+photos.each do |photo_url|
+  Photo.create!(
+    user_id: rand(1..14),
+    photo_url: photo_url,
+    description: ""
   )
 end
