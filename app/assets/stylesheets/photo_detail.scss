@@ -11,3 +11,16 @@
 .photo-detail {
   border: 1px solid black;
 }
+
+.photo {
+  display: flex;
+  justify-content: center;
+  max-height: 600px;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}

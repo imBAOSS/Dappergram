@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, hashHistory } from 'react-router';
-import PhotoDetail from '../PhotoDetail/photo_detail';
+import PhotoDetail from '../PhotoDetail/photo_detail.jsx';
 
 class PhotoFeed extends React.Component {
   constructor(props) {
@@ -23,10 +23,9 @@ class PhotoFeed extends React.Component {
       imageUrl = <img src={this.props.session.currentUser.photo_url}/>;
     }
 
-    
-    let feed = Object.keys(this.props.photos).map(id => {
+    let feed = Object.keys(this.props.photos).map(id => (
         <li key={id}><PhotoDetail photo={this.props.photos[id]}/></li>
-      }
+      )
     );
 
     return (

@@ -21,7 +21,7 @@ class PhotoDetail extends React.Component {
         </div>
 
         <div className="photo">
-
+          <img src={`${this.props.photo.photo_url}`}/>
         </div>
 
         <div className="num-likes">
