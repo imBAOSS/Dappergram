@@ -23,9 +23,10 @@ class PhotoFeed extends React.Component {
       imageUrl = <img src={this.props.session.currentUser.photo_url}/>;
     }
 
-    let feed = Object.keys(this.props.photos).map(id => (
+    
+    let feed = Object.keys(this.props.photos).map(id => {
         <li key={id}><PhotoDetail photo={this.props.photos[id]}/></li>
-      )
+      }
     );
 
     return (

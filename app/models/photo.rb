@@ -19,7 +19,7 @@ class Photo < ApplicationRecord
 
   belongs_to :user
 
-  has_attached_file :photo, default_url: "husky.jpg"
+  has_attached_file :photo#, default_url: "husky.jpg"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
   def days_since_uploaded

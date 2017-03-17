@@ -6,7 +6,6 @@ class PhotoDetail extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <div className='photo-detail'>
         <div className="user-info-header">
@@ -22,7 +21,7 @@ class PhotoDetail extends React.Component {
         </div>
 
         <div className="photo">
-          Photo Here
+
         </div>
 
         <div className="num-likes">
