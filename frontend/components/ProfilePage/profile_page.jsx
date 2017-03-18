@@ -26,7 +26,7 @@ class ProfilePage extends React.Component {
                className="profile-user-info-header">
               <div className="profile-user-info">
                 <div className="username">
-                  {this.props.user.username}
+                  <h1>{this.props.user.username}</h1>
                 </div>
                 <div className="follow-button">
                   Following

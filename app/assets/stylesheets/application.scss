@@ -28,10 +28,10 @@
  $proxima-nova: "proxima-nova",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
  $cookie-cursive: 'Cookie', cursive;
 
- @import "css_reset";
- @import url('https://fonts.googleapis.com/css?family=Cookie');
- @import "nav_bar";
- @import "auth_form";
- @import "photo_feed";
- @import "photo_detail";
- @import "profile_page";
+ @import "css_reset"; // 1
+ @import url('https://fonts.googleapis.com/css?family=Cookie'); // 2
+ @import "nav_bar"; // 3
+ @import "auth_form"; // 4
+ @import "photo_feed"; // 5
+ @import "photo_detail"; // 6
+ @import "profile_page"; // 7
