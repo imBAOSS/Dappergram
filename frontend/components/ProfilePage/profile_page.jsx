@@ -9,7 +9,54 @@ class ProfilePage extends React.Component {
     this.props.fetchUser(this.props.params.id);
   }
 
+  logout() {
+    this.props.logout()
+    .then( () => this.props.router.push('/login'));
+  }
+
   render () {
+    let photoFeed = [];
+    let chunk = 3;
+    if (this.props.user.photos) {
+      let reverse = this.props.user.photos.reverse();
+      for (let i = 0; i < reverse.length; i+=chunk) {
+        let subChunk = reverse.slice(i, i+chunk);
+        let row =
+        <div key={i} className="profile-feed-row">
+          {
+            subChunk.map((photo, idx) =>
+              <div key={idx} className="profile-feed-photo-cont">
+                <img className="profile-feed-photo" key={idx} src={photo.photo_url}/>
+              </div>
+            )
+          }
+        </div>
+        photoFeed.push(row);
+      }
+    }
+
+    let followButton;
+
+    if (this.props.session.currentUser.id !== this.props.user.id) {
+      followButton =
+      (<button
+        className="follow-button">
+        Follow
+      </button>)
+    }
+
+    let logoutButton;
+
+    if (this.props.session.currentUser.id === this.props.user.id) {
+      logoutButton =
+      (<button
+        className="logout-button"
+        onClick={ this.logout }/>)
+    }
+
+
+    let loadMoreButton;
+
     return (
       <div className='profile-page-cont'>
         <div className="profile-header-cont">
@@ -28,49 +75,40 @@ class ProfilePage extends React.Component {
                 <div className="username">
                   <h1>{this.props.user.username}</h1>
                 </div>
-                <div className="follow-button">
-                  Following
+                <div className="follow-button-cont">
+                  { followButton }
+                </div>
+                <div className="logout-button-cont">
+                  { logoutButton }
                 </div>
               </div>
 
               <div className="user-stats">
                 <div className="num-posts">
-                  9001 posts
+                  <num>9001</num> posts
                 </div>
 
                 <div className="num-followers">
-                  9001 followers
+                  <num>9001</num> followers
                 </div>
 
                 <div className='num-following'>
-                  9001 following
+                  <num>9001</num> following
                 </div>
               </div>
               <div className="user-description">
-                User's profile description
+                <div className='user-name'>{this.props.user.name}</div> {this.props.user.description}
               </div>
             </div>
           </div>
         </div>
 
         <div className="profile-feed">
-          <div>
-            <div>
-              <div className="image-div">Photo 1</div>
-              <div className="image-div">Photo 2</div>
-              <div className="image-div">Photo 3</div>
-            </div>
-
-            <div>
-              <div className="image-div">Photo 4</div>
-              <div className="image-div">Photo 5</div>
-              <div className="image-div">Photo 6</div>
-            </div>
-          </div>
+          { photoFeed }
         </div>
 
         <div className='load-more-button'>
-          Load More
+          { loadMoreButton }
         </div>
       </div>
     );

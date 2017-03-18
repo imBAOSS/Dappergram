@@ -4,12 +4,11 @@ import { Link, withRouter } from 'react-router';
 class NavBar extends React.Component{
   constructor(props) {
     super(props);
-    this.logout = this.logout.bind(this);
+    this.profilePage = this.profilePage.bind(this);
   }
 
-  logout() {
-    this.props.logout()
-    .then( () => this.props.router.push('/login'));
+  profilePage() {
+    this.props.router.push(`/profile/${this.props.photo.user_id}`);
   }
 
   render() {
@@ -28,7 +27,7 @@ class NavBar extends React.Component{
           </div>
 
           <div className='profile-icon-cont'>
-            <Link onClick={ this.logout }
+            <Link onClick={this.profilePage}
               className="profile-icon"></Link>
           </div>
         </div>
