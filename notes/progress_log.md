@@ -11,6 +11,12 @@ Currently dealing with a bug where the logout button only works the first time, 
 
 ### Day 5
 
-Stuck with a bug where pressing log out in the guest profile, throws a TypeError: Cannot read property 'id' of null. (profile_page.jsx)
+Logout button does not appear in own profile. (profile_page.jsx)
+- Solved this bug by tracing through each of the if logics in the render method to see where .id was being called on a null object. Set the if condition to check if something is null before entering the logic.
 
-Also dealing with a bug where pressing the profile icon in the upper right hand corner will router.push the correct profile_page, but no redirect occurs. (nav_bar.jsx)
+Also dealing with a bug where pressing the profile icon in the upper right hand corner will router.push the correct profile_page, but no redirect occurs from another profile page. (nav_bar.jsx)
+
+Another bug: Visiting other profiles sometimes leaves remnants of previous profile's photo feed.
+- Possible solution - clear feed on leave?
+
+npm package to consider: react-autosuggest

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import ProfilePage from './profile_page';
 import { fetchUser } from '../../actions/user_actions';
 import { logout } from '../../actions/session_actions';
@@ -20,4 +21,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProfilePage);
+)(withRouter(ProfilePage));

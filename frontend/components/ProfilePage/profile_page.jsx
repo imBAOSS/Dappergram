@@ -39,7 +39,7 @@ class ProfilePage extends React.Component {
 
     let followButton;
 
-    if (this.props.user.photos) {
+    if (this.props.session.currentUser) {
       if (this.props.session.currentUser.id !== this.props.user.id) {
         followButton =
         (<button
@@ -50,8 +50,7 @@ class ProfilePage extends React.Component {
     }
 
     let logoutButton;
-    if (this.props.currentUser) {
-      debugger;
+    if (this.props.session.currentUser && this.props.user.id) {
       if (this.props.session.currentUser.id === this.props.user.id) {
         logoutButton =
         (<button

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter, replace } from 'react-router';
 
 class NavBar extends React.Component{
   constructor(props) {
@@ -36,4 +36,4 @@ class NavBar extends React.Component{
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
