@@ -50,8 +50,8 @@ class ProfilePage extends React.Component {
     }
 
     let logoutButton;
-
-    if (this.props.user.photos) {
+    if (this.props.currentUser) {
+      debugger;
       if (this.props.session.currentUser.id === this.props.user.id) {
         logoutButton =
         (<button
