@@ -8,7 +8,7 @@ class NavBar extends React.Component{
   }
 
   profilePage() {
-    this.props.router.push(`/profile/${this.props.photo.user_id}`);
+    this.props.router.push(`/profile/${this.props.session.currentUser.id}`);
   }
 
   render() {

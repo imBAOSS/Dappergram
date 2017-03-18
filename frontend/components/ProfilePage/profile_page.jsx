@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router';
 
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
+    this.logout = this.logout.bind(this);
   }
 
   componentWillMount() {
-    this.props.fetchUser(this.props.params.id);
+    this.props.fetchUser(this.props.params.id)
   }
 
   logout() {
@@ -37,23 +39,26 @@ class ProfilePage extends React.Component {
 
     let followButton;
 
-    if (this.props.session.currentUser.id !== this.props.user.id) {
-      followButton =
-      (<button
-        className="follow-button">
-        Follow
-      </button>)
+    if (this.props.user.photos) {
+      if (this.props.session.currentUser.id !== this.props.user.id) {
+        followButton =
+        (<button
+          className="follow-button">
+          Follow
+        </button>)
+      }
     }
 
     let logoutButton;
 
-    if (this.props.session.currentUser.id === this.props.user.id) {
-      logoutButton =
-      (<button
-        className="logout-button"
-        onClick={ this.logout }/>)
+    if (this.props.user.photos) {
+      if (this.props.session.currentUser.id === this.props.user.id) {
+        logoutButton =
+        (<button
+          className="logout-button"
+          onClick={ this.logout }/>)
+      }
     }
-
 
     let loadMoreButton;
 
@@ -115,4 +120,4 @@ class ProfilePage extends React.Component {
   }
 }
 
-export default ProfilePage;
+export default withRouter(ProfilePage);
