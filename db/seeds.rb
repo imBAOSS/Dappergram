@@ -41,4 +41,19 @@ photos.each do |photo|
     photo_url: photo,
     description: Faker::ChuckNorris.fact
   )
+
+Like.new(user_id: 2, photo_id: 99)
+Like.new(user_id: 3, photo_id: 99)
+Like.new(user_id: 4, photo_id: 99)
+Like.new(user_id: 5, photo_id: 99)
+Like.new(user_id: 6, photo_id: 99)
+Like.new(user_id: 7, photo_id: 99)
+
+Like.new(user_id: 2, photo_id: 98)
+Like.new(user_id: 3, photo_id: 98)
+Like.new(user_id: 4, photo_id: 98)
+Like.new(user_id: 5, photo_id: 98)
+Like.new(user_id: 6, photo_id: 98)
+Like.new(user_id: 7, photo_id: 98)
+
 end

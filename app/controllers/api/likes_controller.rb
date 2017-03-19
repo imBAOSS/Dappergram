@@ -3,7 +3,11 @@ class Api::LikesController < ApplicationController
     @like = Like.new(like_params)
     @like.user_id = current_user.id
 
-    render json: @like.errors.full_messages, status: 422 unless @like.save
+    if @like.save
+      render 'api/likes/show'
+    else
+      render json: @like.errors.full_messages, status: 422
+    end
   end
 
   def destroy

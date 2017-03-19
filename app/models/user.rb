@@ -29,7 +29,7 @@ class User < ApplicationRecord
 
   has_many :likes
 
-  has_many :liked_photos,
+  has_many :photos_liked,
     through: :likes,
     source: :photo
 
