@@ -16,6 +16,12 @@ class ProfilePage extends React.Component {
     .then( () => this.props.router.push('/login'));
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.id !== nextProps.params.id) {
+      this.props.fetchUser(nextProps.params.id);
+    }
+  }
+
   render () {
     let photoFeed = [];
     let chunk = 3;

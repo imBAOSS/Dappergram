@@ -9,6 +9,7 @@ import App from './App';
 import AuthFormContainer from './AuthForm/auth_form_container';
 import PhotoFeedContainer from './PhotoFeed/photo_feed_container';
 import ProfilePageContainer from './ProfilePage/profile_page_container';
+import NavBarContainer from './NavBar/nav_bar_container';
 
 const Root = ({store}) => {
 
@@ -29,6 +30,7 @@ const Root = ({store}) => {
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
+        <Route path="/" component={ NavBarContainer }/>
         <Route path="/" component={ App }>
           <IndexRedirect to="/login"/>
           <Route path="/signup" component={ AuthFormContainer } onEnter={ _redirectIfLoggedIn }/>
