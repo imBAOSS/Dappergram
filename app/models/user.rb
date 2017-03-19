@@ -27,6 +27,12 @@ class User < ApplicationRecord
 
   has_many :photos
 
+  has_many :likes
+
+  has_many :liked_photos,
+    through: :likes,
+    source: :photo
+
   has_attached_file :profile_photo,
   default_url: "https://s3.amazonaws.com/dappergram-dev/users/profile_photos/000/000/005/original/default_profile_photo.jpeg"
   validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\z/

@@ -24,4 +24,10 @@ Another bug: Visiting other profiles sometimes leaves remnants of previous profi
 Bug with continual component updating due to receiving new props since componentWillReceiveProps(nextProps) called a fetchUser method.
 - Without the conditional to check to make sure current params were different from next params. Fix was to add a conditional statment to check if current params was different from nextParams.
 
-npm package to consider: react-autosuggest
+npm packages to consider:
+react-infinite (infinite scroll)
+  (https://github.com/seatgeek/react-infinite)
+react-infinite-scroller (more up to date)
+  (https://github.com/CassetteRocks/react-infinite-scroller)
+  (https://www.npmjs.com/package/react-infinite-scroll)
+react-autosuggest (search)
