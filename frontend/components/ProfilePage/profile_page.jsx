@@ -17,6 +17,7 @@ class ProfilePage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    debugger;
     if (this.props.params.id !== nextProps.params.id) {
       this.props.fetchUser(nextProps.params.id);
     }

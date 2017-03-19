@@ -1,5 +1,4 @@
-
-
+### Day 1 and 2 at imbaoss.com, posts: Week 8 Day 2 and Week 8 Day 3.
 
 ### Day 3
 
@@ -21,5 +20,8 @@ Also dealing with a bug where pressing the profile icon in the upper right hand 
 
 Another bug: Visiting other profiles sometimes leaves remnants of previous profile's photo feed.
 - Possible solution - clear feed on leave?
+
+Bug with continual component updating due to receiving new props since componentWillReceiveProps(nextProps) called a fetchUser method.
+- Without the conditional to check to make sure current params were different from next params. Fix was to add a conditional statment to check if current params was different from nextParams.
 
 npm package to consider: react-autosuggest
