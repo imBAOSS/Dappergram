@@ -123,8 +123,23 @@ img {
 }
 
 .like-icon {
-  background-image: image-url('sprites.png');
-  background-position: -130px -322px;
+  background-image: image-url('dapper_sprites.png');
   height: 100%;
   width: 100%;
+  background-position: -130px -322px;
+}
+
+.like-icon-filled, .like-icon-empty {
+  background-image: image-url('dapper_sprites.png');
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.like-icon-empty {
+  background-position: -130px -322px;
+}
+
+.like-icon-filled {
+  background-position: 0 -322px;
 }

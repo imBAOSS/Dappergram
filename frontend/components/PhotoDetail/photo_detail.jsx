@@ -12,6 +12,12 @@ class PhotoDetail extends React.Component {
   }
 
   render() {
+    let likeIcon = 'like-icon-empty'
+    if (this.props.currentUser) {
+      if (this.props.currentUser.likes.includes(this.props.photo.photoId)) {
+        likeIcon = 'like-icon-filled'
+      }
+    }
 
     return (
       <div className='photo-detail'>
@@ -37,7 +43,7 @@ class PhotoDetail extends React.Component {
         </div>
         <div className='photo-info'>
           <div className="num-likes">
-            9001 likes!
+            {this.props.photo.likes.length} likes
           </div>
 
           <div className='photo-caption'>
@@ -62,7 +68,7 @@ class PhotoDetail extends React.Component {
 
           <div className='interact'>
             <div className='like-icon-cont'>
-              <div className='like-icon'>
+              <div className={likeIcon}>
               </div>
             </div>
             <div className='add-comment-cont'>

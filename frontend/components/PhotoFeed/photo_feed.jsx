@@ -26,7 +26,8 @@ class PhotoFeed extends React.Component {
     let feed = Object.keys(this.props.photos).map(id => (
         <PhotoDetail
           key={id}
-          photo={this.props.photos[id]}/>
+          photo={this.props.photos[id]}
+          currentUser={this.props.session.currentUser}/>
       )
     );
 
