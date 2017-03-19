@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter, hashHistory } from 'react-router';
 import PhotoDetail from '../PhotoDetail/photo_detail.jsx';
+import InfiniteScroll from 'react-infinite-scroller';
 
 class PhotoFeed extends React.Component {
   constructor(props) {
@@ -37,7 +38,9 @@ class PhotoFeed extends React.Component {
       <div className='feed'>
         <div className='photo-feed'>
           <div className='photo-feed-container'>
-            {feed}
+
+              {feed}
+            
           </div>
         </div>
       </div>
