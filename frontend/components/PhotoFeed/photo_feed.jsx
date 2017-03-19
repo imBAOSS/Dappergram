@@ -27,7 +27,9 @@ class PhotoFeed extends React.Component {
         <PhotoDetail
           key={id}
           photo={this.props.photos[id]}
-          currentUser={this.props.session.currentUser}/>
+          currentUser={this.props.session.currentUser}
+          deleteLike={this.props.deleteLike}
+          createLike={this.props.createLike}/>
       )
     );
 

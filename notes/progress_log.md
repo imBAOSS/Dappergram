@@ -16,13 +16,22 @@ Logout button does not appear in own profile. (profile_page.jsx)
 Also dealing with a bug where pressing the profile icon in the upper right hand corner will router.push the correct profile_page, but no redirect occurs from another profile page. (nav_bar.jsx)
 - NavBarContainer is not passed in as a component within root.jsx. Is this a problem?
 - profile to guest profile navigation doesn't work, guest profile navigation from any other url works.
-- Update: Navigation from profile router to guest router has been fixed. A new bug was introduced however. When clicking between profile to profile, or somehwere else to profile, there's a flicker that looks like a double render of the profile page component.
+**BUG** - Update: Navigation from profile router to guest router has been fixed. A new bug was introduced however. When clicking between profile to profile, or somehwere else to profile, there's a flicker that looks like a double render of the profile page component.
 
-Another bug: Visiting other profiles sometimes leaves remnants of previous profile's photo feed.
+**BUG** Another bug: Visiting other profiles sometimes leaves remnants of previous profile's photo feed.
 - Possible solution - clear feed on leave?
 
 Bug with continual component updating due to receiving new props since componentWillReceiveProps(nextProps) called a fetchUser method.
 - Without the conditional to check to make sure current params were different from next params. Fix was to add a conditional statment to check if current params was different from nextParams.
+
+### Day 6
+Biggest problem today was figuring out how to get the like ID in order to delete a like.
+- fixed this major, time-consuming issue by passing in the entire like object via json.jbuilder, instead of just a list of users_id's.
+
+Liking or unliking throws a Uncaught TypeError: Cannot read property 'type' of undefined. As a result, there's no re-rendering of the like button? **BUG** Not sure if the not re-rendering is a result of this bug, or a separate bug.
+- Solved a lot of the type issues. Confirmed that the re-rendering was a different bug.
+
+
 
 npm packages to consider:
 react-infinite (infinite scroll)

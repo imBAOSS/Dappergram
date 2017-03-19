@@ -4,7 +4,9 @@ import merge from 'lodash/merge';
 
 const PhotoFeedReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
+  let newState = merge({}, oldState);
 
+  let photoKey;
   switch (action.type) {
     case RECEIVE_PHOTOS:
       let photos = {};
@@ -15,23 +17,43 @@ const PhotoFeedReducer = (oldState = {}, action) => {
       }
       return merge({}, oldState, photos);
     case RECEIVE_LIKE:
-      let newstate = merge({}, oldState);
-        newState.photos.likes[action.like.id] = action.like.user;
-        newState.user.photos.push(action.like.photo.id);
+      Object.keys(newState).forEach( idx =>
+        {
+          if (newState[idx].photoId === action.like.photo.id) {
+            photoKey = idx;
+          }
+        }
+      )
 
-        return newState;
+      newState[photoKey].likes.push(action.like);
+
+      return newState;
     //newState
       // add photo id to user.likes array
       // add user object with id and username to photo.likes object
       // return newState
 
     case REMOVE_LIKE:
-      let newState = merge({}, oldState);
-        delete newState.photos.likes[action.like.id];
-        let index = newState.user.likes.indexOf(action.like.photo.id);
-        newState.user.likes.splice(index, 1);
+      Object.keys(newState).forEach( idx =>
+        {
+          if (newState[idx].photoId === action.like.photo_id) {
+            photoKey = idx;
+          }
+        }
+      )
 
-        return newState;
+      let likeKey;
+      newState[photoKey].likes.forEach( (el, idx) =>
+        {
+          if (newState[photoKey].likes[idx].id === action.like.id) {
+            likeKey = idx;
+          }
+        }
+      )
+
+      newState[photoKey].likes.splice(likeKey, 1);
+
+      return newState;
     //newState
       // remove photo id from user.likes array
       // remove user object from photo.likes object

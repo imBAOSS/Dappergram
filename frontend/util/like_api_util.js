@@ -1,7 +1,8 @@
 export const createLike = id => (
   $.ajax({
     method: "POST",
-    url: `api/photos/${id}/likes`
+    url: `api/photos/${id}/likes`,
+    data: {like: {photo_id: id}}
   })
 );
 

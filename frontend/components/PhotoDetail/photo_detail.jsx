@@ -5,16 +5,33 @@ class PhotoDetail extends React.Component {
   constructor(props) {
     super(props);
     this.profilePage = this.profilePage.bind(this);
+    this.toggleLike = this.toggleLike.bind(this);
+    this.userLikes = this.props.currentUser.likes;
+    this.photoId = this.props.photo.photoId;
   }
 
   profilePage() {
     this.props.router.push(`/profile/${this.props.photo.user_id}`);
   }
 
+  toggleLike() {
+    if (this.userLikes.includes(this.photoId)) {
+      let likeId;
+      this.props.photo.likes.forEach( like => {
+        if (like.user_id === this.props.currentUser.id) {
+          likeId = like.id;
+        }
+      })
+      this.props.deleteLike(likeId);
+    } else {
+      this.props.createLike(this.photoId);
+    }
+  }
+
   render() {
     let likeIcon = 'like-icon-empty'
     if (this.props.currentUser) {
-      if (this.props.currentUser.likes.includes(this.props.photo.photoId)) {
+      if (this.userLikes.includes(this.photoId)) {
         likeIcon = 'like-icon-filled'
       }
     }
@@ -68,7 +85,9 @@ class PhotoDetail extends React.Component {
 
           <div className='interact'>
             <div className='like-icon-cont'>
-              <div className={likeIcon}>
+              <div
+                className={likeIcon}
+                onClick={this.toggleLike}>
               </div>
             </div>
             <div className='add-comment-cont'>
