@@ -7,4 +7,5 @@ json.array! @photos do |photo|
   json.description photo.description
   json.upload_date photo.created_at
   json.likes photo.likes
+  json.comments photo.comments
 end

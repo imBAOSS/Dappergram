@@ -1,7 +1,7 @@
 import { RECEIVE_PHOTOS } from '../actions/photo_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
-import { RECEIVE COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 
 const PhotoFeedReducer = (oldState = {}, action) => {
   Object.freeze(oldState);

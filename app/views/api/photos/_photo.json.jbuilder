@@ -4,3 +4,4 @@ json.profile_photo_url photo.user.photo_url
 json.photo_url photo.photo.url
 json.upload_date photo.created_at
 json.likes photo.likes
+json.comments photo.comments
