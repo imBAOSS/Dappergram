@@ -1,6 +1,7 @@
 import { RECEIVE_PHOTOS } from '../actions/photo_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
+import { RECEIVE COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 
 const PhotoFeedReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -53,6 +54,10 @@ const PhotoFeedReducer = (oldState = {}, action) => {
       // remove photo id from user.likes array
       // remove user object from photo.likes object
       //return newState
+
+    case RECEIVE_COMMENT:
+      
+    case REMOVE_COMMENT:
 
     default:
       return oldState;
