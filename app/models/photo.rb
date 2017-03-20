@@ -20,11 +20,12 @@ class Photo < ApplicationRecord
   belongs_to :user
 
   has_many :likes
+  has_many :comments
 
   has_many :users_liked,
     through: :likes,
     source: :user
-    
+
   def days_since_uploaded
     now = DateTime.now
     seconds = (self.created_at - now).to_i

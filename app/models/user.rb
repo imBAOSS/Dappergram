@@ -27,6 +27,7 @@ class User < ApplicationRecord
 
   has_many :photos
   has_many :likes
+  has_many :comments
 
   has_many :photos_liked,
     through: :likes,
