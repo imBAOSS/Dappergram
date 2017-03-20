@@ -31,7 +31,12 @@ Biggest problem today was figuring out how to get the like ID in order to delete
 Liking or unliking throws a Uncaught TypeError: Cannot read property 'type' of undefined. As a result, there's no re-rendering of the like button? **BUG** Not sure if the not re-rendering is a result of this bug, or a separate bug.
 - Solved a lot of the type issues. Confirmed that the re-rendering was a different bug.
 
+### Day 7
+**BUG** Still having trouble with the like button not toggling correctly and sending incorrect requests to the server. It may be due to something out of sync.
 
+**BUG** Clicking follow button re-arranges profile pictures... wtf?
+
+**BUG** Entering the page doesn't reflect current follow status correctly.
 
 npm packages to consider:
 react-infinite (infinite scroll)

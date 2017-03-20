@@ -5,6 +5,7 @@ class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);
+    this.toggleFollow = this.toggleFollow.bind(this);
   }
 
   componentWillMount() {
@@ -19,6 +20,14 @@ class ProfilePage extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.params.id !== nextProps.params.id) {
       this.props.fetchUser(nextProps.params.id);
+    }
+  }
+
+  toggleFollow() {
+    if (this.props.session.currentUser.followees.includes(this.props.user.id)) {
+      this.props.deleteFollow(this.props.user.id);
+    } else {
+      this.props.createFollow(this.props.user.id);
     }
   }
 
@@ -47,11 +56,20 @@ class ProfilePage extends React.Component {
 
     if (this.props.session.currentUser) {
       if (this.props.session.currentUser.id !== this.props.user.id) {
+        if (this.props.session.currentUser.followees.includes(this.props.user.id)) {
+          followButton = (<button
+            className="following-button"
+            onClick={this.toggleFollow}>
+            Following
+          </button>)
+        } else {
         followButton =
-        (<button
-          className="follow-button">
-          Follow
-        </button>)
+          (<button
+            className="follow-button"
+            onClick={this.toggleFollow}>
+            Follow
+          </button>)
+        }
       }
     }
 

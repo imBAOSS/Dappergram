@@ -32,7 +32,7 @@ const SessionReducer = (oldState = _nullUser, action) => {
       newState.currentUser.followees.push(action.follow.followee_id)
       return newState;
     case REMOVE_FOLLOW:
-      let idx = newState.currentUser.followess.indexOf(action.follow.followee_id);
+      let idx = newState.currentUser.followees.indexOf(action.userId);
       newState.currentUser.followees.splice(idx, 1)
       return newState;
     default:
