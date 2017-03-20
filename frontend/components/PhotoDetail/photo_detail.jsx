@@ -54,8 +54,7 @@ class PhotoDetail extends React.Component {
   }
 
   updateComment() {
-    debugger;
-    return e => this.setState({[body]: e.target.value});
+    return e => this.setState({body: e.target.value});
   }
 
   handleSubmit(e) {
@@ -123,7 +122,7 @@ class PhotoDetail extends React.Component {
                   type='text'
                   className='add-comment'
                   placeholder='Add a comment...'
-                  onChange={this.updateComment}/>
+                  onChange={this.updateComment()}/>
               </form>
             </div>
           </div>

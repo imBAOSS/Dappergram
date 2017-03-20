@@ -55,8 +55,12 @@ const PhotoFeedReducer = (oldState = {}, action) => {
       //return newState
 
     case RECEIVE_COMMENT:
-      let idx = Object.keys(newState).length;
-      newState[idx] = action.comment;
+      debugger;
+      Object.keys(newState).forEach( id => {
+        if (newState[id].photoId === action.comment.photo.id) {
+          newState[id].comments.push(action.comment)
+        }
+      })
       return newState;
     case REMOVE_COMMENT:
       Object.keys(newState).forEach((comment, idx) => {
