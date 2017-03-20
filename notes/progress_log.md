@@ -16,7 +16,7 @@ Logout button does not appear in own profile. (profile_page.jsx)
 Also dealing with a bug where pressing the profile icon in the upper right hand corner will router.push the correct profile_page, but no redirect occurs from another profile page. (nav_bar.jsx)
 - NavBarContainer is not passed in as a component within root.jsx. Is this a problem?
 - profile to guest profile navigation doesn't work, guest profile navigation from any other url works.
-**BUG** - Update: Navigation from profile router to guest router has been fixed. A new bug was introduced however. When clicking between profile to profile, or somehwere else to profile, there's a flicker that looks like a double render of the profile page component.
+**BUG** - Update: Navigation from profile router to guest router has been fixed. A new bug was introduced however. When clicking between profile to profile, or somewhere else to profile, there's a flicker that looks like a double render of the profile page component.
 
 **BUG** Another bug: Visiting other profiles sometimes leaves remnants of previous profile's photo feed.
 - Possible solution - clear feed on leave?
@@ -42,6 +42,8 @@ Liking or unliking throws a Uncaught TypeError: Cannot read property 'type' of u
 **BUG** Clicking directly from one profile to the next only changes header. Retains pictures, and sometimes stats.
 
 **BUG** Add comment input field does not span the entire parent.
+
+**BUG** User stats on profile page (#posts, #followers, #following) aren't updated real time.
 
 npm packages to consider:
 react-infinite (infinite scroll)
