@@ -36,7 +36,10 @@ Liking or unliking throws a Uncaught TypeError: Cannot read property 'type' of u
 
 **BUG** Clicking follow button re-arranges profile pictures... wtf?
 
-**BUG** Entering the page doesn't reflect current follow status correctly.
+**BUGSOLVED** Entering the page doesn't reflect current follow status correctly.
+- Retraced path to realize that logic to determine whether or not user followee id was included in current user follower was meant for arrays, whereas objects were being returned.
+
+**BUG** Clicking directly from one profile to the next only changes header. Retains pictures, and sometimes stats.
 
 npm packages to consider:
 react-infinite (infinite scroll)

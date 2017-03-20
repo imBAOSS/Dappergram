@@ -32,6 +32,13 @@ class ProfilePage extends React.Component {
   }
 
   render () {
+
+    let numPosts = this.props.user.photos ? this.props.user.photos.length : "";
+
+    let numFollowers = this.props.user.followers ? this.props.user.followers.length : "";
+
+    let numFollowees = this.props.user.followees ? this.props.user.followees.length : "";
+
     let photoFeed = [];
     let chunk = 3;
     if (this.props.user.photos) {
@@ -113,15 +120,15 @@ class ProfilePage extends React.Component {
 
               <div className="user-stats">
                 <div className="num-posts">
-                  <num>9001</num> posts
+                  <num>{numPosts}</num> posts
                 </div>
 
                 <div className="num-followers">
-                  <num>9001</num> followers
+                  <num>{numFollowers}</num> followers
                 </div>
 
                 <div className='num-following'>
-                  <num>9001</num> following
+                  <num>{numFollowees}</num> following
                 </div>
               </div>
               <div className="user-description">
