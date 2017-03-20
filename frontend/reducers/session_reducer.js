@@ -29,7 +29,12 @@ const SessionReducer = (oldState = _nullUser, action) => {
       newState.currentUser.likes.splice(index, 1);
       return newState;
     case RECEIVE_FOLLOW:
+      newState.currentUser.followees.push(action.follow.followee_id)
+      return newState;
     case REMOVE_FOLLOW:
+      let idx = newState.currentUser.followess.indexOf(action.follow.followee_id);
+      newState.currentUser.followees.splice(idx, 1)
+      return newState;
     default:
       return oldState;
   }

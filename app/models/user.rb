@@ -32,21 +32,21 @@ class User < ApplicationRecord
     through: :likes,
     source: :photo
 
-  has_many :is_follower,
-    class_name: :User,
-    foreign_key: :follower_id
-
-  has_many :is_followed,
-    class_name: :User,
-    foreign_key: :followed_id
-
   has_many :followers,
-    through: :is_follower,
-    source: :followed
-
-  has_many :followed,
-    through: :is_followed,
+    through: :follower_follows,
     source: :follower
+
+  has_many :follower_follows,
+    foreign_key: :followee_id,
+    class_name: :Follow
+
+  has_many :followees,
+    through: :followee_follows,
+    source: :followee
+
+  has_many :followee_follows,
+    foreign_key: :follower_id,
+    class_name: :Follow
 
   has_attached_file :profile_photo,
   default_url: "https://s3.amazonaws.com/dappergram-dev/users/profile_photos/000/000/005/original/default_profile_photo.jpeg"

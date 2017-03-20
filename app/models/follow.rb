@@ -2,11 +2,11 @@
 #
 # Table name: follows
 #
-#  id           :integer          not null, primary key
-#  follower_id  :integer          not null
-#  following_id :integer          not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id          :integer          not null, primary key
+#  follower_id :integer          not null
+#  followee_id :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 class Follow < ApplicationRecord
@@ -17,7 +17,7 @@ class Follow < ApplicationRecord
     class_name: :User,
     foreign_key: :follower_id
 
-  belongs_to :followed,
+  belongs_to :followee,
     class_name: :User,
-    foreign_key: :followed_id
+    foreign_key: :followee_id
 end
