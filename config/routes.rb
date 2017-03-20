@@ -8,8 +8,10 @@ Rails.application.routes.draw do
     end
     resources :photos, only: [:index, :show] do
       resources :likes, only: [:create]
+      resources :comments, only: [:create]
     end
     resources :likes, only: [:destroy]
     resources :follows, only: [:destroy]
+    resources :comments, only: [:destroy]
   end
 end
