@@ -9,6 +9,7 @@ class PhotoDetail extends React.Component {
     this.setLikeIcon = this.setLikeIcon.bind(this);
     this.updateComment = this.updateComment.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteComment = this.deleteComment.bind(this);
     this.numLikes;
     this.LikeIcon;
     this.state = {
@@ -60,11 +61,27 @@ class PhotoDetail extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createComment(this.state);
+    this.setState({body: ""});
+  }
+
+  deleteComment(comment) {
+    this.props.deleteComment(comment);
   }
 
   render() {
     this.setLikeIcon();
-    let comments;
+
+    let comments = this.props.photo.comments.map( (comment, idx) => (
+      <li key={idx} className='comment-li'>
+        <Link
+          to={`/profile/${comment.user.id}`}
+          className='comment-username'>
+          {comment.user.username}
+        </Link>
+        <div className='comment-body'>{comment.body}</div>
+      </li>
+      )
+    );
 
     return (
       <div className='photo-detail'>
@@ -122,6 +139,7 @@ class PhotoDetail extends React.Component {
                   type='text'
                   className='add-comment'
                   placeholder='Add a comment...'
+                  value={this.state.body}
                   onChange={this.updateComment()}/>
               </form>
             </div>

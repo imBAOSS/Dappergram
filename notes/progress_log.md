@@ -41,6 +41,8 @@ Liking or unliking throws a Uncaught TypeError: Cannot read property 'type' of u
 
 **BUG** Clicking directly from one profile to the next only changes header. Retains pictures, and sometimes stats.
 
+**BUG** Add comment input field does not span the entire parent.
+
 npm packages to consider:
 react-infinite (infinite scroll)
   (https://github.com/seatgeek/react-infinite)

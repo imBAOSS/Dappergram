@@ -83,11 +83,35 @@ img {
   margin-bottom: 7px;
 }
 
-.user-photo-caption, .commenter-user {
+.user-photo-caption {
   color: $darkest-gray;
   font-weight: 600;
   margin: 0 5px 0 0;
   cursor: pointer;
+  font-size: 15px;
+}
+
+.comment-li {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-body {
+  display: flex;
+  width: 100%;
+  font-size: 15px;
+}
+
+.comment-username {
+  color: black;
+  font-weight: 600;
+  margin-left: -5px;
+  margin-right: 4.5px;
+  word-wrap: break-word;
+  padding-left: 5px;
+  font-size: 15px;
+  line-height: 18px;
+  display: flex;
 }
 
 .interact {
@@ -109,7 +133,7 @@ img {
   border-style: none;
   font-size: 14px;
   line-height: 17px;
-  flex: 0 0 100%;
+  width: 100%;
   font-weight: 200;
 }
 
