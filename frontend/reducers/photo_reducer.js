@@ -18,7 +18,6 @@ const PhotoFeedReducer = (oldState = {}, action) => {
       }
       return merge({}, oldState, photos);
     case RECEIVE_LIKE:
-    debugger;
       Object.keys(newState).forEach( idx =>
         {
           if (newState[idx].photoId === action.like.photo.id) {
@@ -56,9 +55,16 @@ const PhotoFeedReducer = (oldState = {}, action) => {
       //return newState
 
     case RECEIVE_COMMENT:
-      
+      let idx = Object.keys(newState).length;
+      newState[idx] = action.comment;
+      return newState;
     case REMOVE_COMMENT:
-
+      Object.keys(newState).forEach((comment, idx) => {
+        if (comment.id === action.comment.id) {
+          delete newState[idx];
+        }
+      })
+      return newState;
     default:
       return oldState;
   }

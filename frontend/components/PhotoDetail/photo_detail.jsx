@@ -7,8 +7,15 @@ class PhotoDetail extends React.Component {
     this.profilePage = this.profilePage.bind(this);
     this.toggleLike = this.toggleLike.bind(this);
     this.setLikeIcon = this.setLikeIcon.bind(this);
+    this.updateComment = this.updateComment.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.numLikes;
     this.LikeIcon;
+    this.state = {
+      user_id: this.props.currentUser.id,
+      photo_id: this.props.photo.photoId,
+      body: ""
+    };
   }
 
   profilePage() {
@@ -46,8 +53,19 @@ class PhotoDetail extends React.Component {
     this.numLikes = newProps.photo.likes.length;
   }
 
+  updateComment() {
+    debugger;
+    return e => this.setState({[body]: e.target.value});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createComment(this.state);
+  }
+
   render() {
     this.setLikeIcon();
+    let comments;
 
     return (
       <div className='photo-detail'>
@@ -87,13 +105,9 @@ class PhotoDetail extends React.Component {
           </div>
 
           <div className='comments'>
-            <p>
-              <Link
-                className='commenter-user'>
-                Commenter
-              </Link>
-              Looking daaaaaaaapper
-            </p>
+            <ul>
+              { comments }
+            </ul>
           </div>
 
           <div className='interact'>
@@ -104,11 +118,12 @@ class PhotoDetail extends React.Component {
               </div>
             </div>
             <div className='add-comment-cont'>
-              <form>
+              <form onSubmit={this.handleSubmit}>
                 <input
                   type='text'
                   className='add-comment'
-                  placeholder='Add a comment...'/>
+                  placeholder='Add a comment...'
+                  onChange={this.updateComment}/>
               </form>
             </div>
           </div>

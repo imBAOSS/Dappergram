@@ -8,6 +8,7 @@ class Api::CommentsController < ApplicationController
       render 'api/comments/show', status: 200
     else
       render json: @comment.errors.full_messages, status: 422
+    end
   end
 
   def destroy

@@ -102,13 +102,14 @@ img {
 .add-comment-cont {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .add-comment {
   border-style: none;
   font-size: 14px;
   line-height: 17px;
-  width: 100%;
+  flex: 0 0 100%;
   font-weight: 200;
 }
 

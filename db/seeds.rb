@@ -58,3 +58,7 @@ Like.create!(user_id: 4, photo_id: 98)
 Like.create!(user_id: 5, photo_id: 98)
 Like.create!(user_id: 6, photo_id: 98)
 Like.create!(user_id: 7, photo_id: 98)
+
+# Seed Followers
+
+Comment.create!(user_id: 1, photo_id: 99, body: "Test Comment")

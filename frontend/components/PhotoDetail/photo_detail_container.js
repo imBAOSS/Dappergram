@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import PhotoDetail from './photo_detail';
 import { fetchPhotos, fetchPhoto } from '../../actions/photo_actions';
 import { createLike, deleteLike } from '../../actions/like_actions';
+import { createComment } from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,7 +16,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchPhoto: photo => dispatch(fetchPhoto(photo)),
     createLike: id => dispatch(createLike(id)),
-    deleteLike: id => dispatch(deleteLike(id))
+    deleteLike: id => dispatch(deleteLike(id)),
+    createComment: id => dispatch(createComment(id))
   };
 };
 
