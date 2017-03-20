@@ -61,4 +61,12 @@ Like.create!(user_id: 7, photo_id: 98)
 
 # Seed Followers
 
+sentence_prefex = [
+  'You are looking ',
+  "Lookin' ",
+  "That's ",
+  "Yoo, that's ",
+  ""
+]
+
 Comment.create!(user_id: 1, photo_id: 99, body: "Test Comment")

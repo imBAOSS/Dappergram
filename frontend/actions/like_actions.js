@@ -19,7 +19,6 @@ export const createLike = photo_id => dispatch => {
 };
 
 export const deleteLike = like => dispatch => {
-  debugger;
   return LikeAPIUtil.deleteLike(like.id)
   .then(() => dispatch(removeLike(like)));
 };

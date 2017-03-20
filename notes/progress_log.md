@@ -2,7 +2,7 @@
 
 ### Day 3
 
-Majority of today's problems involved with getting AWS S3 to work properly. At one point, there was a bug where profile pictures weren't showing up correctly, but normal photos on the feed were. The bug was realizing that the links upon seeding had the same prefix for both profile pictures and photos, when they're actually different, so most of the links for profile photos ended up being broken.
+Majority of today's problems involved with getting AWS S3 to work properly. At one point, there was a bug where profile pictures weren't showing up correctly, but normal photos on the feed were. The bug was solved when I realized that the links upon seeding had the same prefix for both profile pictures and photos, when they're actually different, so most of the links for profile photos ended up being broken.
 
 ### Day 4
 
@@ -17,6 +17,8 @@ Also dealing with a bug where pressing the profile icon in the upper right hand 
 - NavBarContainer is not passed in as a component within root.jsx. Is this a problem?
 - profile to guest profile navigation doesn't work, guest profile navigation from any other url works.
 **BUG** - Update: Navigation from profile router to guest router has been fixed. A new bug was introduced however. When clicking between profile to profile, or somewhere else to profile, there's a flicker that looks like a double render of the profile page component.
+
+== Extrapolate photoFeed logic into it's own component. Pass in user as a prop to ProfilePhotos... Extrapolate component for profile header as well.
 
 **BUG** Another bug: Visiting other profiles sometimes leaves remnants of previous profile's photo feed.
 - Possible solution - clear feed on leave?
@@ -35,6 +37,7 @@ Liking or unliking throws a Uncaught TypeError: Cannot read property 'type' of u
 **BUG** Still having trouble with the like button not toggling correctly and sending incorrect requests to the server. It may be due to something out of sync.
 
 **BUG** Clicking follow button re-arranges profile pictures... wtf?
+- Try extrapolating profile pictures out, and fetching photos from dispatch. Add receive_follow to user reducer.
 
 **BUGSOLVED** Entering the page doesn't reflect current follow status correctly.
 - Retraced path to realize that logic to determine whether or not user followee id was included in current user follower was meant for arrays, whereas objects were being returned.
@@ -43,7 +46,8 @@ Liking or unliking throws a Uncaught TypeError: Cannot read property 'type' of u
 
 **BUG** Add comment input field does not span the entire parent.
 
-**BUG** User stats on profile page (#posts, #followers, #following) aren't updated real time.
+**BUGSOLVED** User stats on profile page (#posts, #followers, #following) aren't updated real time.
+- Solved bug by adding a case to handle receive_follow and remove_follow within the user actions.
 
 npm packages to consider:
 react-infinite (infinite scroll)

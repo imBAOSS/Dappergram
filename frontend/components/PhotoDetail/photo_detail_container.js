@@ -8,7 +8,9 @@ import { createComment, deleteComment } from '../../actions/comment_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    photo: state.photoFeed[ownProps.photoId]
+    photo: state.photoFeed[ownProps.photoId],
+    userLikes: state.session.currentUser.likes,
+    photoLikes: state.photoFeed[ownProps.photoId].likes
   };
 };
 
@@ -18,7 +20,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     createLike: id => dispatch(createLike(id)),
     deleteLike: id => dispatch(deleteLike(id)),
     createComment: id => dispatch(createComment(id)),
-    deleteComment: id => dispatch(deleteComment(id))
+    deleteComment: comment => dispatch(deleteComment(comment))
   };
 };
 
