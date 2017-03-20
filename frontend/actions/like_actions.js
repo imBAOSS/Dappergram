@@ -8,9 +8,9 @@ export const receiveLike = like => ({
   like
 });
 
-export const removeLike = photo_id => ({
+export const removeLike = like => ({
   type: REMOVE_LIKE,
-  like: {photo_id}
+  like
 });
 
 export const createLike = photo_id => dispatch => {
@@ -18,7 +18,8 @@ export const createLike = photo_id => dispatch => {
   .then(like => dispatch(receiveLike(like)));
 };
 
-export const deleteLike = photo_id => dispatch => {
-  return LikeAPIUtil.deleteLike(photo_id)
-  .then(like => dispatch(removeLike(photo_id)));
+export const deleteLike = like => dispatch => {
+  debugger;
+  return LikeAPIUtil.deleteLike(like.id)
+  .then(() => dispatch(removeLike(like)));
 };

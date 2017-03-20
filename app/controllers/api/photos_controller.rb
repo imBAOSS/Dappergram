@@ -3,7 +3,7 @@ class Api::PhotosController < ApplicationController
     if params[:id]
       @photos = Photo.find_by_user_id(params[:id]).reverse
     else
-      @photos = Photo.all.reverse
+      @photos = Photo.all.order('created_at desc').limit(5)
     end
 
     render 'api/photos/index'

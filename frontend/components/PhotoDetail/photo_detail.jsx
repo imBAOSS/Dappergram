@@ -6,8 +6,9 @@ class PhotoDetail extends React.Component {
     super(props);
     this.profilePage = this.profilePage.bind(this);
     this.toggleLike = this.toggleLike.bind(this);
-    this.userLikes = this.props.currentUser.likes;
-    this.photoId = this.props.photo.photoId;
+    this.setLikeIcon = this.setLikeIcon.bind(this);
+    this.numLikes;
+    this.LikeIcon;
   }
 
   profilePage() {
@@ -15,26 +16,38 @@ class PhotoDetail extends React.Component {
   }
 
   toggleLike() {
-    if (this.userLikes.includes(this.photoId)) {
-      let likeId;
-      this.props.photo.likes.forEach( like => {
+    if (this.props.currentUser.likes.includes(this.props.photo.photoId)) {
+      let likeObj;
+      this.props.photo.likes.forEach(like => {
         if (like.user_id === this.props.currentUser.id) {
-          likeId = like.id;
+          likeObj = like;
         }
       })
-      this.props.deleteLike(likeId);
+      this.props.deleteLike(likeObj);
     } else {
-      this.props.createLike(this.photoId);
+      this.props.createLike(this.props.photo.photoId);
     }
   }
 
-  render() {
-    let likeIcon = 'like-icon-empty'
-    if (this.props.currentUser) {
-      if (this.userLikes.includes(this.photoId)) {
-        likeIcon = 'like-icon-filled'
-      }
+  setLikeIcon() {
+    if (this.props.currentUser.likes.includes(this.props.photo.photoId)) {
+      this.likeIcon = 'like-icon-filled';
+    } else {
+      this.likeIcon = 'like-icon-empty';
     }
+  }
+
+  componentWillMount() {
+    this.setLikeIcon();
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setLikeIcon();
+    this.numLikes = newProps.photo.likes.length;
+  }
+
+  render() {
+    this.setLikeIcon();
 
     return (
       <div className='photo-detail'>
@@ -86,7 +99,7 @@ class PhotoDetail extends React.Component {
           <div className='interact'>
             <div className='like-icon-cont'>
               <div
-                className={likeIcon}
+                className={this.likeIcon}
                 onClick={this.toggleLike}>
               </div>
             </div>

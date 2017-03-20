@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/session_actions';
 import merge from 'lodash/merge';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
+import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
 
 
 const _nullUser = Object.freeze({
@@ -21,13 +22,14 @@ const SessionReducer = (oldState = _nullUser, action) => {
     case CLEAR_ERRORS:
       return Object.assign({}, oldState, {errors: []});
     case RECEIVE_LIKE:
-      newState.currentUser.likes.push(action.like.photo_id)
+      newState.currentUser.likes.push(action.like.photo.id)
       return newState
     case REMOVE_LIKE:
       let index = newState.currentUser.likes.indexOf(action.like.photo_id);
       newState.currentUser.likes.splice(index, 1);
-
       return newState;
+    case RECEIVE_FOLLOW:
+    case REMOVE_FOLLOW:
     default:
       return oldState;
   }

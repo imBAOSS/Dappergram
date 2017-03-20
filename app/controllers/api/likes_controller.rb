@@ -12,7 +12,11 @@ class Api::LikesController < ApplicationController
 
   def destroy
     @like = Like.find_by_id(params[:id])
-    @like.destroy!
+    if @like.destroy!
+      render 'api/likes/show'
+    else
+      render json: @like.errors.full_messages, status: 422
+    end
   end
 
   def like_params

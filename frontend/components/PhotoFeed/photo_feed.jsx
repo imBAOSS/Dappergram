@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, withRouter, hashHistory } from 'react-router';
-import PhotoDetail from '../PhotoDetail/photo_detail.jsx';
+import PhotoDetail from '../PhotoDetail/photo_detail';
 import InfiniteScroll from 'react-infinite-scroller';
+import PhotoDetailContainer from '../PhotoDetail/photo_detail_container';
 
 class PhotoFeed extends React.Component {
   constructor(props) {
@@ -25,12 +26,10 @@ class PhotoFeed extends React.Component {
     }
 
     let feed = Object.keys(this.props.photos).map(id => (
-        <PhotoDetail
+        <PhotoDetailContainer
           key={id}
-          photo={this.props.photos[id]}
-          currentUser={this.props.session.currentUser}
-          deleteLike={this.props.deleteLike}
-          createLike={this.props.createLike}/>
+          photoId={id}
+          currentUser={this.props.session.currentUser}/>
       )
     );
 
@@ -40,7 +39,7 @@ class PhotoFeed extends React.Component {
           <div className='photo-feed-container'>
 
               {feed}
-            
+
           </div>
         </div>
       </div>
