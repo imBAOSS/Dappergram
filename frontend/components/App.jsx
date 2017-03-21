@@ -13,7 +13,6 @@ const App = ({ children, router }) => {
 
     return (
       <div id='root'>
-        <Video />
         {navBar}
         {children}
       </div>

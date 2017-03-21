@@ -44,6 +44,7 @@ body, button, input, textarea {
   height: 100%;
   max-width: 350px;
   flex: 1;
+  z-index: 100;
 }
 
 .login-form,
