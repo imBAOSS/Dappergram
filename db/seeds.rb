@@ -49,21 +49,15 @@ end
 
 # Seed Likes
 
-Like.create!(user_id: 1, photo_id: 99)
-Like.create!(user_id: 2, photo_id: 99)
-Like.create!(user_id: 3, photo_id: 99)
-Like.create!(user_id: 4, photo_id: 99)
-Like.create!(user_id: 5, photo_id: 99)
-Like.create!(user_id: 6, photo_id: 99)
-Like.create!(user_id: 7, photo_id: 99)
+user_ids = User.all.map{ |user| user.id }
 
-Like.create!(user_id: 1, photo_id: 98)
-Like.create!(user_id: 2, photo_id: 98)
-Like.create!(user_id: 3, photo_id: 98)
-Like.create!(user_id: 4, photo_id: 98)
-Like.create!(user_id: 5, photo_id: 98)
-Like.create!(user_id: 6, photo_id: 98)
-Like.create!(user_id: 7, photo_id: 98)
+photo_ids = Photo.all.map{ |photo| photo.id }
+
+photo_ids.each do |photo_id|
+  user_ids.sample(rand(1..14)).each do |user_id|
+    Like.create!(user_id: user_id, photo_id: photo_id)
+  end
+end
 
 # Seed Comments
 
@@ -97,7 +91,6 @@ adj = [
   "suave"
 ]
 
-user_ids = User.all.map{ |user| user.id }
 
 Photo.all.each do |photo|
   rand(1..7).times do
@@ -113,7 +106,10 @@ end
 # Seed Followers
 
 user_ids.each do |user_id|
-  rand(1..9).times do
-    users = user_ids.reject{ |user_id| }
+  random_users = user_ids.sample(9).uniq
+  random_users.each do |user|
+    if user_id != user
+      Follower.create!(follower_id: user_id, followee_id: user)
+    end
   end
 end
