@@ -72,7 +72,7 @@ adverbs = [
   "hella ",
   "hellaaaaa ",
   "really ",
-  "reallyyy "
+  "reallyyy ",
   "absolutely ",
   "sooooo ",
   "so ",
@@ -109,7 +109,7 @@ user_ids.each do |user_id|
   random_users = user_ids.sample(9).uniq
   random_users.each do |user|
     if user_id != user
-      Follower.create!(follower_id: user_id, followee_id: user)
+      Follow.create!(follower_id: user_id, followee_id: user)
     end
   end
 end

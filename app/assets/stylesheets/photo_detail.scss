@@ -94,11 +94,12 @@ img {
 .comment-li {
   display: flex;
   flex-direction: row;
+  margin-bottom: 7px;
 }
 
 .comment-body {
   display: flex;
-  width: 100%;
+  width: auto;
   font-size: 15px;
 }
 
@@ -112,6 +113,7 @@ img {
   font-size: 15px;
   line-height: 18px;
   display: flex;
+  width: auto;
 }
 
 .interact {
