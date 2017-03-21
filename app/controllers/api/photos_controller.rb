@@ -1,9 +1,9 @@
 class Api::PhotosController < ApplicationController
   def index
-    if params[:id]
-      @photos = Photo.find_by_user_id(params[:id]).reverse
-    else
+    if params[:id].nil?
       @photos = Photo.all.order('created_at desc').limit(5)
+    else
+      @photos = Photo.where('user_id = ?', params[:id]).order('created_at DESC')
     end
 
     render 'api/photos/index'

@@ -26,20 +26,18 @@ class Photo < ApplicationRecord
     through: :likes,
     source: :user
 
-  def days_since_uploaded
-    now = DateTime.now
-    seconds = (self.created_at - now).to_i
-
-    if seconds < 60
-      return "#{seconds}s"
-    elsif seconds >= 60 && seconds < 3600
-      return "#{seconds % 60}m"
-    elsif seconds >= 3600 && seconds < 43200
-      return "#{seconds % 3600}h"
-    elsif seconds >= 43200
-      return "#{seconds % 43200}d"
-    else
-      return "#{seconds % 43200}w"
+    def time_ago
+      minutes = ((Time.new - self.created_at) /1.minute).round
+      hours = ((Time.now - self.created_at) / 1.hour ).round
+      if hours >= 168
+        time = "#{(hours / 168).round}w"
+      elsif hours >= 24
+        time = "#{(hours / 24).round}d"
+      elsif hours >= 1
+        time = "#{hours}h"
+      else
+        time ="#{minutes}m"
+      end
+      time
     end
-  end
 end

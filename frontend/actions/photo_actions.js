@@ -17,6 +17,6 @@ export const fetchPhotos = () => dispatch => (
   PhotoAPIUtil.fetchPhotos().then(photos => dispatch(receivePhotos(photos)))
 );
 
-export const fetchPhoto = photo => dispatch => (
-  PhotoAPIUtil.fetchPhoto(photo).then(photo => dispatch(receivePhoto(photo)))
+export const fetchPhoto = photo_id => dispatch => (
+  PhotoAPIUtil.fetchPhoto(photo_id).then(photo => dispatch(receivePhoto(photo)))
 );

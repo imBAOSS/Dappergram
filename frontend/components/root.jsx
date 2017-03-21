@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 // react router
@@ -27,6 +28,10 @@ const Root = ({store}) => {
     }
   };
 
+  const _clearPage = (nextState, replace) => {
+    
+  }
+
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
@@ -36,7 +41,9 @@ const Root = ({store}) => {
           <Route path="/signup" component={ AuthFormContainer } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/login" component={ AuthFormContainer } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/feed" component={ PhotoFeedContainer } onEnter={ _ensureLoggedIn }/>
-          <Route path="/profile/:id" component={ ProfilePageContainer }/>
+          <Route path="/profile/:id"
+            component={ ProfilePageContainer }
+            onLeave={ _clearPage }/>
         </Route>
       </Router>
     </Provider>

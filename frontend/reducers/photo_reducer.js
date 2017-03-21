@@ -5,8 +5,7 @@ import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 
 const PhotoFeedReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  let newState = merge({}, oldState);
-
+  let newState = Object.assign({}, oldState)
   let photoKey;
   switch (action.type) {
     case RECEIVE_PHOTOS:
@@ -16,43 +15,30 @@ const PhotoFeedReducer = (oldState = {}, action) => {
           photos[idx] = photo
         });
       }
-      return merge({}, oldState, photos);
+      return Object.assign(newState, photos);
     case RECEIVE_LIKE:
-      Object.keys(newState).forEach( idx =>
-        {
-          if (newState[idx].photoId === action.like.photo.id) {
-            photoKey = idx;
-          }
+      Object.keys(newState).forEach(key => {
+        if (newState[key].photoId === action.like.photo_id){
+          photoKey = key;
         }
-      )
-
-      newState[photoKey].likes.push(action.like);
-
+      })
+      newState[photoKey].likes.push(action.like)
+      newState[photoKey].likesCount += 1;
       return newState;
-    //newState
-      // add photo id to user.likes array
-      // add user object with id and username to photo.likes object
-      // return newState
-
     case REMOVE_LIKE:
-      let likeKey;
-      Object.keys(newState).forEach( idx =>
-        {
-          newState[idx].likes.forEach( (el, i) => {
-              if (el.id === action.like) {
-                newState[idx].likes.splice(i, 1);
-              }
-            }
-          )
+      let likeKey
+      Object.keys(newState).forEach( key => {
+        newState[key].likes.forEach( (like, idx) => {
+          if (like.id === action.like.id) {
+            photoKey = key;
+            likeKey = idx;
+          }
+        })
+      })
 
-        }
-      )
-
+      delete newState[photoKey].likes[likeKey];
+      newState[photoKey].likesCount -= 1
       return newState;
-    //newState
-      // remove photo id from user.likes array
-      // remove user object from photo.likes object
-      //return newState
 
     case RECEIVE_COMMENT:
       Object.keys(newState).forEach( id => {

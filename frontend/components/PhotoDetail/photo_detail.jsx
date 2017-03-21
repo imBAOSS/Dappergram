@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Comments from '../Comment/comment';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
@@ -9,7 +10,6 @@ class PhotoDetail extends React.Component {
     this.setLikeIcon = this.setLikeIcon.bind(this);
     this.updateComment = this.updateComment.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.deleteComment = this.deleteComment.bind(this);
     this.numLikes;
     this.LikeIcon;
     this.state = {
@@ -25,13 +25,7 @@ class PhotoDetail extends React.Component {
 
   toggleLike() {
     if (this.props.currentUser.likes.includes(this.props.photo.photoId)) {
-      let likeObj;
-      this.props.photo.likes.forEach(like => {
-        if (like.user_id === this.props.currentUser.id) {
-          likeObj = like;
-        }
-      })
-      this.props.deleteLike(likeObj);
+      this.props.deleteLike(this.props.photo.photoId);
     } else {
       this.props.createLike(this.props.photo.photoId);
     }
@@ -49,10 +43,10 @@ class PhotoDetail extends React.Component {
     this.setLikeIcon();
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setLikeIcon();
-    this.numLikes = newProps.photo.likes.length;
-  }
+  // componentWillReceiveProps(newProps) {
+  //   this.setLikeIcon();
+  //   this.numLikes = newProps.photo.likes.length;
+  // }
 
   updateComment() {
     return e => this.setState({body: e.target.value});
@@ -64,12 +58,10 @@ class PhotoDetail extends React.Component {
     this.setState({body: ""});
   }
 
-  deleteComment(comment) {
-    this.props.deleteComment(comment);
-  }
-
   render() {
     this.setLikeIcon();
+
+    this.numLikes = this.props.photo.likes.length;
 
     let comments = this.props.photo.comments.map( (comment, idx) => (
       <li key={idx} className='comment-li'>
@@ -98,7 +90,7 @@ class PhotoDetail extends React.Component {
               {this.props.photo.username}</Link>
           </div>
           <div className="upload-time">
-            <time>7h</time>
+            <time>{this.props.photo.time_ago}</time>
           </div>
         </div>
 
@@ -107,7 +99,7 @@ class PhotoDetail extends React.Component {
         </div>
         <div className='photo-info'>
           <div className="num-likes">
-            {this.props.photo.likes.length} likes
+            {this.props.photo.likesCount} likes
           </div>
 
           <div className='photo-caption'>
@@ -121,20 +113,21 @@ class PhotoDetail extends React.Component {
           </div>
 
           <div className='comments'>
-            <ul>
-              { comments }
-            </ul>
+            <Comments comments={this.props.photo.comments}/>
           </div>
 
           <div className='interact'>
             <div className='like-icon-cont'>
               <div
                 className={this.likeIcon}
-                onClick={this.toggleLike}>
+                onClick={this.toggleLike}
+                maxLength='255'>
               </div>
             </div>
             <div className='add-comment-cont'>
-              <form onSubmit={this.handleSubmit}>
+              <form
+                className='comment-form'
+                onSubmit={this.handleSubmit}>
                 <input
                   type='text'
                   className='add-comment'
