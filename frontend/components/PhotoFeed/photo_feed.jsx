@@ -7,6 +7,10 @@ import PhotoDetailContainer from '../PhotoDetail/photo_detail_container';
 class PhotoFeed extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      photos: this.props.photos,
+      hasMorePhotos: true
+    }
   }
 
   componentDidUpdate() {
@@ -17,6 +21,10 @@ class PhotoFeed extends React.Component {
 
   componentWillMount() {
     this.props.fetchPhotos();
+  }
+
+  fetchMorePhotos() {
+    this.fetchMorePhotos
   }
 
   render() {
@@ -37,9 +45,13 @@ class PhotoFeed extends React.Component {
       <div className='feed'>
         <div className='photo-feed'>
           <div className='photo-feed-container'>
-
+            <InfiniteScroll
+              pageStart={0}
+              loadMore={this.fetchMorePhotos}
+              hasMore={this.state.hasMorePhotos}
+              loader={<div className="loader">Loading ...</div>}>
               {feed}
-
+            </InfiniteScroll>
           </div>
         </div>
       </div>

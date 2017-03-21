@@ -56,6 +56,10 @@ Improved rendering profile pages bug by adding componentWillUnmount lifecycle me
 
 Also fixed follower and following updating methods by returning only the new user received instead of merging older state and new state.
 
+### Day 9
+**BUG** Upon initial login, currentUser isn't set to window.
+- Possibly Object.assign user upon receive_user instead of only returning new user?
+
 npm packages to consider:
 react-infinite (infinite scroll)
   (https://github.com/seatgeek/react-infinite)
