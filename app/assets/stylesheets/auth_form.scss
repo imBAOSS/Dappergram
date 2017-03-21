@@ -53,6 +53,7 @@ body, button, input, textarea {
   margin: 0 0 10px;
   padding: 25px 0 10px;
   background-color: $white;
+  background: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.8);
 }
 
@@ -69,6 +70,7 @@ body, button, input, textarea {
   padding: 25px 0;
   border: 1px solid $light-gray;
   background-color: $white;
+  background: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.8);
 }
 
@@ -125,7 +127,7 @@ button.button{
   display: flex;
   flex-direction: row;
   margin: 10px 40px;
-  align-items: stretch;
+  align-items: center;
   box-sizing: border-box;
 }
 
@@ -135,8 +137,8 @@ button.button{
   text-align: center;
   font-size: 13px;
   color: $gray;
-  width: 268px;
-  margin: inherit;
+  width: auto;
+  margin: 10px 18px;
 }
 
 .line {
@@ -147,7 +149,9 @@ button.button{
   flex-shrink: 1;
   position: relative;
   box-sizing: border-box;
-  color: $lighter-gray;
+  background-color: $lighter-gray;
+  width: 100%;
+  align-items: stretch;
 }
 
 button, .button, .submit-button {

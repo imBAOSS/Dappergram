@@ -62,11 +62,33 @@ Like.create!(user_id: 7, photo_id: 98)
 # Seed Followers
 
 sentence_prefex = [
-  'You are looking ',
+  'Looking ',
   "Lookin' ",
   "That's ",
-  "Yoo, that's ",
-  ""
+  "Yoo, that's "
+]
+
+adverbs = [
+  "hella ",
+  "hellaaaaa ",
+  "really ",
+  "reallyyy "
+  "absolutely ",
+  "sooooo ",
+  "so ",
+  "freakin' ",
+  "seriously "
+]
+
+adj = [
+  "dapper",
+  "daaaaaapper",
+  "classy",
+  "smooth",
+  "awesome!",
+  "fresh!",
+  "fly!",
+  "suave"
 ]
 
 Comment.create!(user_id: 1, photo_id: 99, body: "Test Comment")
