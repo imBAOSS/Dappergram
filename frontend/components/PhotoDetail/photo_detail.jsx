@@ -111,9 +111,9 @@ class PhotoDetail extends React.Component {
           </div>
 
           <div className='comments'>
-            <ul>
-              { comments }
-            </ul>
+
+              <Comments comments={this.props.photo.comments}/>
+            
           </div>
 
           <div className='interact'>

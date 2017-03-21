@@ -59,6 +59,7 @@ Also fixed follower and following updating methods by returning only the new use
 **BUG** Unfollowing throws an error due to no currentUser in the window.
 
 **BUG** Comments do not update real time, and now appear in reverse order.
+- Reverse order seems to be due to comments being saved to the database in reverse order. Or at least, being called in reverse order.
 
 **BUG** Compatibility issues with Safari. Mostly button text positioning.
 
