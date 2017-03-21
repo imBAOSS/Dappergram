@@ -16,6 +16,7 @@ class Video extends React.Component {
           <source src={this.state.root + "gq-slo.webm"} type="video/webm"/>
           <source src={this.state.root + "gq-slo.webm"} type="video/mp4"/>
         </video>
+
       </div>
     )
   }

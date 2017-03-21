@@ -55,6 +55,7 @@ class AuthForm extends React.Component {
     return (
       <div className='auth-page'>
         <Video />
+        <div className="video-overlay"></div>
         <div className='form'>
           { form }
           { this.redirectLink() }
