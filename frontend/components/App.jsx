@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import NavBarContainer from './NavBar/nav_bar_container';
+import Video from './Video/video';
 
 
 const App = ({ children, router }) => {
@@ -12,6 +13,7 @@ const App = ({ children, router }) => {
 
     return (
       <div id='root'>
+        <Video />
         {navBar}
         {children}
       </div>
