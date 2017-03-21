@@ -4,27 +4,35 @@ import { Link, withRouter } from 'react-router';
 class ProfilePageFeed extends React.Component {
   constructor(props) {
     super(props)
-    this.populateFeed = this.populateFeed.bind(this)
+    this.populateFeed = this.populateFeed.bind(this);
     this.photoFeed = [];
   }
 
-  componentWillMount() {
-    this.props.fetchPhotos(this.props.router.params.id)
+  componentWillUpdate(nextProps) {
+    if (this.props.params.id !== nextProps.params.id) {
+      this.props.fetchUser(nextProps.params.id)
+      .then(this.props.fetchPhotos(nextProps.params.id));
+    }
   }
 
   populateFeed() {
+    this.photoFeed = [];
     let chunk = 3;
     let photos = this.props.photos;
     if (photos) {
       for (let i = 0; i < photos.length; i+=chunk) {
         let subChunk = photos.slice(i, i+chunk);
         let row =
-        <div key={i} className="profile-feed-row">
+        <div key={`row-${chunk}-${i}-${chunk}`} className="profile-feed-row">
           {
             subChunk.map((photo, idx) =>
-              <div key={idx} className="profile-feed-photo-cont">
-                <img className="profile-feed-photo" key={idx} src={photo.photo_url}/>
-              </div>
+              {
+                return (
+                  <div key={`line-${idx}`} className="profile-feed-photo-cont">
+                    <img className="profile-feed-photo" src={photo.photo_url}/>
+                  </div>
+                )
+              }
             )
           }
         </div>

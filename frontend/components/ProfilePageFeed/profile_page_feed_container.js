@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPhotos } from '../../actions/photo_actions';
+import { fetchUser } from '../../actions/user_actions';
 import ProfilePageFeed from './profile_page_feed';
 
 const mapStateToProps = (state, ownProps) => {

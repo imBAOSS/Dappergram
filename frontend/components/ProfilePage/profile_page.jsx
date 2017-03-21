@@ -9,7 +9,7 @@ class ProfilePage extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchUser(this.props.router.params.id)
+    this.props.fetchUser(this.props.router.params.id);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -19,8 +19,11 @@ class ProfilePage extends React.Component {
     }
   }
 
-  render () {
+  componentWillUnmount() {
+    this.props.clearUser();
+  }
 
+  render () {
     let loadMoreButton;
     return (
       <div className='profile-page-cont'>
@@ -29,8 +32,7 @@ class ProfilePage extends React.Component {
         </div>
 
         <div className="profile-feed">
-          <ProfilePageFeedContainer
-            user={this.props.user}/>
+          <ProfilePageFeedContainer/>
         </div>
 
         <div className='load-more-button'>

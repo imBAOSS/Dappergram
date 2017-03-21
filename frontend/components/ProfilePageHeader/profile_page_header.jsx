@@ -8,13 +8,16 @@ class ProfilePageHeader extends React.Component{
     this.toggleFollow = this.toggleFollow.bind(this);
   }
 
-  componentWillMount() {
-    this.props.fetchUser(this.props.router.params.id);
-  }
-
   logout() {
     this.props.logout()
     .then( () => this.props.router.push('/login'));
+  }
+
+  componentWillUpdate(nextProps) {
+    if (this.props.params.id !== nextProps.params.id) {
+      this.props.fetchUser(nextProps.params.id)
+      .then(this.props.fetchPhotos(nextProps.params.id));
+    }
   }
 
   toggleFollow() {

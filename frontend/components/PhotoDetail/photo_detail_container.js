@@ -9,14 +9,13 @@ const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     photo: state.photoFeed[ownProps.photoId],
-    userLikes: state.session.currentUser.likes,
-    photoLikes: state.photoFeed[ownProps.photoId].likes
+    likesCount: state.photoFeed[ownProps.photoId].likes.length
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchPhoto: photo => dispatch(fetchPhoto(photo)),
+    fetchPhoto: photo_id => dispatch(fetchPhoto(photo_id)),
     createLike: id => dispatch(createLike(id)),
     deleteLike: id => dispatch(deleteLike(id)),
     createComment: id => dispatch(createComment(id)),

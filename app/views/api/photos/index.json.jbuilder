@@ -6,7 +6,12 @@ json.array! @photos do |photo|
   json.photo_url photo.photo_url
   json.description photo.description
   json.upload_date photo.created_at
-  json.likes photo.likes
+  json.likesCount photo.likes.count
+  json.likes photo.likes do |like|
+    json.id like.id
+    json.user_id like.user_id
+    json.photo_id like.photo_id
+  end
   json.comments photo.comments do |comment|
     json.id comment.id
     json.user comment.user, :id, :name, :username

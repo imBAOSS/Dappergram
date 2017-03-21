@@ -22,14 +22,16 @@ const SessionReducer = (oldState = _nullUser, action) => {
     case CLEAR_ERRORS:
       return Object.assign({}, oldState, {errors: []});
     case RECEIVE_LIKE:
-      newState.currentUser.likes.push(action.like.photo.id)
+      newState.currentUser.likes.push(action.like.photo_id)
       return newState
     case REMOVE_LIKE:
       let index = newState.currentUser.likes.indexOf(action.like.photo_id);
       newState.currentUser.likes.splice(index, 1);
       return newState;
     case RECEIVE_FOLLOW:
+      if (newState.currentUser.id !== action.follow.followee_id) {
       newState.currentUser.followees.push(action.follow.followee_id)
+      }
       return newState;
     case REMOVE_FOLLOW:
       let idx = newState.currentUser.followees.indexOf(action.userId);
