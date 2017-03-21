@@ -44,7 +44,7 @@ Liking or unliking throws a Uncaught TypeError: Cannot read property 'type' of u
 
 **BUGSOLVED** Clicking directly from one profile to the next only changes header. Retains pictures, and sometimes stats.
 
-**BUG** Add comment input field does not span the entire parent.
+**BUGSOLVED** Add comment input field does not span the entire parent.
 
 **BUGSOLVED** User stats on profile page (#posts, #followers, #following) aren't updated real time.
 - Solved bug by adding a case to handle receive_follow and remove_follow within the user actions.
@@ -55,6 +55,12 @@ Liking or unliking throws a Uncaught TypeError: Cannot read property 'type' of u
 Improved rendering profile pages bug by adding componentWillUnmount lifecycle methods to profile page and setting current user to be an empty object.
 
 Also fixed follower and following updating methods by returning only the new user received instead of merging older state and new state.
+
+**BUG** Unfollowing throws an error due to no currentUser in the window.
+
+**BUG** Comments do not update real time, and now appear in reverse order.
+
+**BUG** Compatibility issues with Safari. Mostly button text positioning.
 
 npm packages to consider:
 react-infinite (infinite scroll)

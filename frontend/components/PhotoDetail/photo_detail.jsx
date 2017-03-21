@@ -61,8 +61,6 @@ class PhotoDetail extends React.Component {
   render() {
     this.setLikeIcon();
 
-    this.numLikes = this.props.photo.likes.length;
-
     let comments = this.props.photo.comments.map( (comment, idx) => (
       <li key={idx} className='comment-li'>
         <Link
@@ -113,7 +111,9 @@ class PhotoDetail extends React.Component {
           </div>
 
           <div className='comments'>
-            <Comments comments={this.props.photo.comments}/>
+            <ul>
+              { comments }
+            </ul>
           </div>
 
           <div className='interact'>
