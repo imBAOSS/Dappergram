@@ -90,7 +90,7 @@ class PhotoDetail extends React.Component {
               {this.props.photo.username}</Link>
           </div>
           <div className="upload-time">
-            <time>7h</time>
+            <time>{this.props.photo.time_ago}</time>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ class PhotoDetail extends React.Component {
         </div>
         <div className='photo-info'>
           <div className="num-likes">
-            {this.numLikes} likes
+            {this.props.photo.likesCount} likes
           </div>
 
           <div className='photo-caption'>

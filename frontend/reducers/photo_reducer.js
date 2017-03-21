@@ -23,6 +23,7 @@ const PhotoFeedReducer = (oldState = {}, action) => {
         }
       })
       newState[photoKey].likes.push(action.like)
+      newState[photoKey].likesCount += 1;
       return newState;
     case REMOVE_LIKE:
       let likeKey
@@ -36,6 +37,7 @@ const PhotoFeedReducer = (oldState = {}, action) => {
       })
 
       delete newState[photoKey].likes[likeKey];
+      newState[photoKey].likesCount -= 1
       return newState;
 
     case RECEIVE_COMMENT:
