@@ -16,7 +16,7 @@ const UserReducer = (oldState = {}, action) => {
       }
       return newState;
     case REMOVE_FOLLOW:
-      let idx = newState.followers.indexOf(currentUser.id);
+      let idx = newState.followers.indexOf(action.follow.follower_id);
       newState.followers.splice(idx, 1);
       return newState;
     default:

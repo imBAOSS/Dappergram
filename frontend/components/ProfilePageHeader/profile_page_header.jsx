@@ -6,6 +6,8 @@ class ProfilePageHeader extends React.Component{
     super(props);
     this.logout = this.logout.bind(this);
     this.toggleFollow = this.toggleFollow.bind(this);
+    this.renderFollowButton = this.renderFollowButton.bind(this);
+    this.followButton;
   }
 
   logout() {
@@ -22,9 +24,32 @@ class ProfilePageHeader extends React.Component{
 
   toggleFollow() {
     if (this.props.session.currentUser.followees.includes(this.props.user.id)) {
-      this.props.deleteFollow(this.props.user.id);
+      this.props.deleteFollow(this.props.user.id)
+      .then(() => this.renderFollowButton());
     } else {
-      this.props.createFollow(this.props.user.id);
+      this.props.createFollow(this.props.user.id)
+      .then(() => this.renderFollowButton());
+    }
+  }
+
+  renderFollowButton() {
+    if (this.props.session.currentUser) {
+      if (this.props.session.currentUser.id !== this.props.user.id) {
+        if (this.props.session.currentUser.followees.includes(this.props.user.id)) {
+          this.followButton = (<button
+            className="following-button"
+            onClick={this.toggleFollow}>
+            Following
+          </button>)
+        } else {
+        this.followButton =
+          (<button
+            className="follow-button"
+            onClick={this.toggleFollow}>
+            Follow
+          </button>)
+        }
+      }
     }
   }
 
@@ -41,13 +66,13 @@ class ProfilePageHeader extends React.Component{
     if (this.props.session.currentUser) {
       if (this.props.session.currentUser.id !== this.props.user.id) {
         if (this.props.session.currentUser.followees.includes(this.props.user.id)) {
-          followButton = (<button
+          this.followButton = (<button
             className="following-button"
             onClick={this.toggleFollow}>
             Following
           </button>)
         } else {
-        followButton =
+        this.followButton =
           (<button
             className="follow-button"
             onClick={this.toggleFollow}>
@@ -84,7 +109,7 @@ class ProfilePageHeader extends React.Component{
               <h1>{this.props.user.username}</h1>
             </div>
             <div className="follow-button-cont">
-              { followButton }
+              { this.followButton }
             </div>
             <div className="logout-button-cont">
               { logoutButton }

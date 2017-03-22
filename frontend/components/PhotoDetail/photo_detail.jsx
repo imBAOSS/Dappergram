@@ -10,7 +10,6 @@ class PhotoDetail extends React.Component {
     this.setLikeIcon = this.setLikeIcon.bind(this);
     this.updateComment = this.updateComment.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.numLikes;
     this.LikeIcon;
     this.state = {
       user_id: this.props.currentUser.id,
