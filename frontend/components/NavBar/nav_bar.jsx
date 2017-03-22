@@ -22,7 +22,7 @@ class NavBar extends React.Component{
             </div>
 
             <div className="dappergram">
-              <h1>Dappergram</h1>
+              <h1>DapperLife</h1>
             </div>
           </div>
 
