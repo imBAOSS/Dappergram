@@ -53,7 +53,7 @@ class LogInForm extends React.Component {
     return (
       <div className="login-form">
         <div className="auth-header">
-          <h1>Dappergram</h1>
+          <h1>DapperLife</h1>
           <br/>
         </div>
         <div>

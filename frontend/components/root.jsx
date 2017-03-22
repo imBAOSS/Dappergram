@@ -29,7 +29,7 @@ const Root = ({store}) => {
   };
 
   const _clearPage = (nextState, replace) => {
-    
+
   }
 
   return (
