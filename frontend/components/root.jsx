@@ -28,10 +28,6 @@ const Root = ({store}) => {
     }
   };
 
-  const _clearPage = (nextState, replace) => {
-    
-  }
-
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
@@ -42,8 +38,7 @@ const Root = ({store}) => {
           <Route path="/login" component={ AuthFormContainer } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/feed" component={ PhotoFeedContainer } onEnter={ _ensureLoggedIn }/>
           <Route path="/profile/:id"
-            component={ ProfilePageContainer }
-            onLeave={ _clearPage }/>
+            component={ ProfilePageContainer }/>
         </Route>
       </Router>
     </Provider>
