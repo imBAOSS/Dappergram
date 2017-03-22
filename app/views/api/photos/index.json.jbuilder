@@ -12,7 +12,7 @@ json.array! @photos do |photo|
     json.user_id like.user_id
     json.photo_id like.photo_id
   end
-  json.comments photo.comments do |comment|
+  json.comments photo.comments.reverse do |comment|
     json.id comment.id
     json.user comment.user, :id, :name, :username
     json.photo comment.photo

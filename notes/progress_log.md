@@ -63,6 +63,8 @@ Also fixed follower and following updating methods by returning only the new use
 
 **BUG** Compatibility issues with Safari. Mostly button text positioning.
 
+**BUG** Root path does not redirect to login.
+
 npm packages to consider:
 react-infinite (infinite scroll)
   (https://github.com/seatgeek/react-infinite)

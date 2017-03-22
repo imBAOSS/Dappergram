@@ -54,15 +54,15 @@ class PhotoDetail extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createComment(this.state);
-    this.setState({body: ""});
+    console.log(this.props);
+    this.props.createComment(this.state)
+    .then(() => this.setState({body: ""}));
   }
 
   render() {
     this.setLikeIcon();
-
     let comments = this.props.photo.comments.map( (comment, idx) => (
-      <li key={idx} className='comment-li'>
+      <li key={comment.id} className='comment-li'>
         <Link
           to={`/profile/${comment.user.id}`}
           className='comment-username'>
@@ -112,8 +112,10 @@ class PhotoDetail extends React.Component {
 
           <div className='comments'>
 
-              <Comments comments={this.props.photo.comments}/>
-            
+              <ul>
+                { comments }
+              </ul>
+
           </div>
 
           <div className='interact'>
