@@ -65,7 +65,9 @@ sentence_prefex = [
   'Looking ',
   "Lookin' ",
   "That's ",
-  "Yoo, that's "
+  "Yoo, that's ",
+  "I think that's ",
+  "Ay, that's "
 ]
 
 adverbs = [
