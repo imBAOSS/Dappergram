@@ -44,6 +44,7 @@ body, button, input, textarea {
   height: 100%;
   max-width: 350px;
   flex: 1;
+  z-index: 100;
 }
 
 .login-form,
@@ -52,6 +53,8 @@ body, button, input, textarea {
   margin: 0 0 10px;
   padding: 25px 0 10px;
   background-color: $white;
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, .8);
 }
 
 .input {
@@ -67,6 +70,8 @@ body, button, input, textarea {
   padding: 25px 0;
   border: 1px solid $light-gray;
   background-color: $white;
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .auth-header {

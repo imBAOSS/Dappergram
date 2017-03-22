@@ -14,7 +14,8 @@ class Video extends React.Component {
         <video loop muted='true' autoPlay="true"
           poster={this.state.root + "poster.png"} className="fullscreen-bg-video">
           <source src={this.state.root + "gq-slo.webm"} type="video/webm"/>
-          <source src={this.state.root + "gq-slo.webm"} type="video/mp4"/>
+          <source src={this.state.root + "gq-slo.mp4"} type="video/mp4"/>
+          <source src={this.state.root + "gq-slo.ogv"} type="video/ogv"/>
         </video>
       </div>
     )

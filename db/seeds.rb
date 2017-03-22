@@ -78,7 +78,6 @@ adverbs = [
   "so ",
   "freakin' ",
   "seriously "
-]
 
 adj = [
   "dapper",

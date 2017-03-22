@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router';
 
 import SignUpForm from '../SessionForm/signup';
 import LogInForm from '../SessionForm/login';
+import Video from '../Video/video';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -53,7 +54,8 @@ class AuthForm extends React.Component {
 
     return (
       <div className='auth-page'>
-        <div className="splash-image"/>
+        <Video />
+        <div className="video-overlay"></div>
         <div className='form'>
           { form }
           { this.redirectLink() }
