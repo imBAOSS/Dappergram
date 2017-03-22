@@ -72,6 +72,7 @@ Implemented infinite scroll
 ### Day 9
 **BUG** Upon initial login, currentUser isn't set to window.
 - Possibly Object.assign user upon receive_user instead of only returning new user?
+- Refactored reducer to not use window.currentUser.
 
 npm packages to consider:
 react-infinite (infinite scroll)
