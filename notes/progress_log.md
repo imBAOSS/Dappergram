@@ -63,9 +63,14 @@ Also fixed follower and following updating methods by returning only the new use
 - Reverse order seems to be due to comments being saved to the database in reverse order. Or at least, being called in reverse order.
 - Put a band aid on it. Threw a reverse in jBuilder.
 
-**BUG** Compatibility issues with Safari. Mostly button text positioning.
+**BUGSOLVED** Compatibility issues with Safari. Mostly button text positioning.
 
 **BUG** Root path does not redirect to login.
+
+Implemented infinite scroll
+
+### Day 9
+
 
 npm packages to consider:
 react-infinite (infinite scroll)
