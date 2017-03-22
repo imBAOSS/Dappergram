@@ -36,17 +36,17 @@ Liking or unliking throws a Uncaught TypeError: Cannot read property 'type' of u
 ### Day 7
 **BUG** Still having trouble with the like button not toggling correctly and sending incorrect requests to the server. It may be due to something out of sync.
 
-**BUGSOLVED** Clicking follow button re-arranges profile pictures... wtf?
+**RESOLVED** Clicking follow button re-arranges profile pictures... wtf?
 - Try extrapolating profile pictures out, and fetching photos from dispatch. Add receive_follow to user reducer.
 
-**BUGSOLVED** Entering the page doesn't reflect current follow status correctly.
+**RESOLVED** Entering the page doesn't reflect current follow status correctly.
 - Retraced path to realize that logic to determine whether or not user followee id was included in current user follower was meant for arrays, whereas objects were being returned.
 
-**BUGSOLVED** Clicking directly from one profile to the next only changes header. Retains pictures, and sometimes stats.
+**RESOLVED** Clicking directly from one profile to the next only changes header. Retains pictures, and sometimes stats.
 
-**BUGSOLVED** Add comment input field does not span the entire parent.
+**RESOLVED** Add comment input field does not span the entire parent.
 
-**BUGSOLVED** User stats on profile page (#posts, #followers, #following) aren't updated real time.
+**RESOLVED** User stats on profile page (#posts, #followers, #following) aren't updated real time.
 - Solved bug by adding a case to handle receive_follow and remove_follow within the user actions.
 
 **BUG** Unable to request images reversed
@@ -56,14 +56,14 @@ Improved rendering profile pages bug by adding componentWillUnmount lifecycle me
 
 Also fixed follower and following updating methods by returning only the new user received instead of merging older state and new state.
 
-**BUGSOLVED** Unfollowing throws an error due to no currentUser in the window.
+**RESOLVED** Unfollowing throws an error due to no currentUser in the window.
 - Had methods not rely on window currentUser.
 
-**BUGSOLVED** Comments do not update real time, and now appear in reverse order.
+**RESOLVED** Comments do not update real time, and now appear in reverse order.
 - Reverse order seems to be due to comments being saved to the database in reverse order. Or at least, being called in reverse order.
 - Put a band aid on it. Threw a reverse in jBuilder.
 
-**BUGSOLVED** Compatibility issues with Safari. Mostly button text positioning.
+**RESOLVED** Compatibility issues with Safari. Mostly button text positioning.
 
 **BUG** Root path does not redirect to login.
 

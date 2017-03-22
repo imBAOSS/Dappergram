@@ -1,7 +1,7 @@
 class Api::PhotosController < ApplicationController
   def index
     if params[:id].nil?
-      @photos = Photo.all.order('created_at desc').limit(5)
+      @photos = Photo.all.order('created_at desc').limit(10)
     else
       @photos = Photo.where('user_id = ?', params[:id]).order('created_at DESC')
     end
