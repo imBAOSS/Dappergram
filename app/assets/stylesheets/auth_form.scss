@@ -146,6 +146,7 @@ button.button{
   box-sizing: border-box;
   color: $lighter-gray;
   width: 100%;
+  align-items: stretch;
 }
 
 button, .button, .submit-button {
