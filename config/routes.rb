@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :likes, only: [:destroy]
     resources :follows, only: [:destroy]
     resources :comments, only: [:destroy]
+    resources :infinite_photos, only: [:index]
   end
 end

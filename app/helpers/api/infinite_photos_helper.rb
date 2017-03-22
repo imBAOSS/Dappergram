@@ -1,0 +1,2 @@
+module Api::InfinitePhotosHelper
+end

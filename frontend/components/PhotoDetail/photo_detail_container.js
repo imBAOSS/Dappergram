@@ -8,8 +8,8 @@ import { createComment, deleteComment } from '../../actions/comment_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    photo: state.photoFeed[ownProps.photoId],
-    likesCount: state.photoFeed[ownProps.photoId].likes.length
+    photo: ownProps.photos[ownProps.photoId],
+    likesCount: ownProps.photos[ownProps.photoId].likes.length
   };
 };
 

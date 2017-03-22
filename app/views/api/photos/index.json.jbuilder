@@ -18,4 +18,5 @@ json.array! @photos do |photo|
     json.photo comment.photo
     json.body comment.body
   end
+  json.created_at photo.created_at
 end
