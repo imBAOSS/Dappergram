@@ -54,6 +54,38 @@
   filter: blur(5px);
 }
 
+.brighter {
+  filter: brightness(1.5);
+}
+
+.darker {
+  filter: brightness(.5);
+}
+
+.contrast {
+  filter: contrast(2);
+}
+
+.fade {
+  filter: contrast(.5);
+}
+
 .grayscale {
   filter: grayscale(100%);
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.saturate {
+  filter: saturate(2);
+}
+
+.sepia {
+  filter: sepia(1);
+}
+
+.opacity {
+  filter: opacity(.2);
 }
