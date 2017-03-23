@@ -48,11 +48,14 @@ const PhotoFeedReducer = (oldState = {}, action) => {
       })
       return newState;
     case REMOVE_COMMENT:
-      Object.keys(newState).forEach((comment, idx) => {
-        if (comment.id === action.comment.id) {
-          delete newState[idx];
-        }
+      Object.keys(newState).forEach( i => {
+        newState[i].comments.forEach( (comment, idx) => {
+          if (comment.id === action.comment.id) {
+            newState[i].comments.splice(idx, 1);
+          }
+        })
       })
+
       return newState;
     default:
       return oldState;

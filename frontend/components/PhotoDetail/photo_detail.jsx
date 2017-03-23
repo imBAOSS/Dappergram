@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import Comments from '../Comment/comment';
+import Comments from '../Comment/comments_index';
 import Photo from './photo';
 import classNames from 'classnames';
 

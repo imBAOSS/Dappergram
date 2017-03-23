@@ -1,47 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router';
-import * as CommentAPIUtil from '../../util/comment_api_util';
 
-class Comments extends React.Component {
+class Comment extends React.Component {
   constructor(props) {
     super(props);
-    this._deleteComment = this._deleteComment.bind(this);
+    this._deleteComment =this._deleteComment.bind(this);
   }
 
-  _deleteComment(comment) {
-    CommentAPIUtil.deleteComment(comment);
-  };
+  _deleteComment() {
+    this.props.deleteComment(this.props.comment)
+  }
 
-  render(){
+  render() {
+    let deleteCommentButton;
 
-    let comments =
-        this.props.comments.map( (comment, idx) => {
-          let deleteCommentButton;
-          if (comment.user.id === this.props.currentUser.id) {
-            deleteCommentButton = <button
-              className='delete-comment'
-              onClick={this._deleteComment(comment)}/>
-          }
-
-          return (
-            <li key={idx} className='comment-li'>
-              <Link
-                to={`/profile/${comment.user.id}`}
-                className='comment-username'>
-                {comment.user.username}
-              </Link>
-              <div className='comment-body'>{comment.body}</div>
-              {deleteCommentButton}
-            </li>
-          )
-        });
+    if (this.props.comment.user.id === this.props.currentUser.id) {
+      deleteCommentButton = <button
+        className='delete-comment'
+        onClick={this._deleteComment}/>
+    }
 
     return (
-      <ul>
-        {comments}
-      </ul>
-    )
-  }
+      <li key={this.props.comment.id} className='comment-li'>
+        <Link
+          to={`/profile/${this.props.comment.user.id}`}
+          className='comment-username'>
+          {this.props.comment.user.username}
+        </Link>
+        <div className='comment-body'>{this.props.comment.body}</div>
+        {deleteCommentButton}
+      </li>
+      )
+    }
 }
 
-export default Comments;
+export default Comment;
