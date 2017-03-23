@@ -1,0 +1,55 @@
+.comment-li {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 7px;
+}
+
+.comment-username {
+  color: black;
+  font-weight: 600;
+  margin-left: -5px;
+  margin-right: 4.5px;
+  word-wrap: break-word;
+  padding-left: 5px;
+  font-size: 15px;
+  line-height: 18px;
+  display: flex;
+  width: auto;
+}
+
+.comment-body {
+  display: flex;
+  width: auto;
+  font-size: 15px;
+}
+
+.delete-comment {
+  background-color: $off-white;
+  color: $lighter-gray;
+  background-image: image_url('dapper_sprites.png');
+  height: 16px;
+  width: 16px;
+  background-position: 20px -72px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 0;
+  opacity: .2;
+}
+
+.add-comment-cont {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.comment-form {
+  width: 100%;
+}
+
+.add-comment {
+  border-style: none;
+  font-size: 14px;
+  line-height: 17px;
+  width: 100%;
+  font-weight: 200;
+}

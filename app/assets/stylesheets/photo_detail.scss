@@ -92,31 +92,6 @@ img {
   font-size: 15px;
 }
 
-.comment-li {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 7px;
-}
-
-.comment-body {
-  display: flex;
-  width: auto;
-  font-size: 15px;
-}
-
-.comment-username {
-  color: black;
-  font-weight: 600;
-  margin-left: -5px;
-  margin-right: 4.5px;
-  word-wrap: break-word;
-  padding-left: 5px;
-  font-size: 15px;
-  line-height: 18px;
-  display: flex;
-  width: auto;
-}
-
 .interact {
   display: flex;
   flex-direction: row;
@@ -124,24 +99,6 @@ img {
   margin-top: 9px;
   border-top: 1px solid $lightest-gray;
   min-height: 48px;
-}
-
-.add-comment-cont {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.comment-form {
-  width: 100%;
-}
-
-.add-comment {
-  border-style: none;
-  font-size: 14px;
-  line-height: 17px;
-  width: 100%;
-  font-weight: 200;
 }
 
 .like-icon-cont {

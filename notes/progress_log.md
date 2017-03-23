@@ -74,6 +74,8 @@ Implemented infinite scroll
 - Possibly Object.assign user upon receive_user instead of only returning new user?
 - Refactored reducer to not use window.currentUser.
 
+Finished photo filtering functionality via CSS rather than imagemagick. ImageMagick gave me a lot of issues installing, and a lot of time was wasted.
+
 npm packages to consider:
 react-dropzone (https://github.com/okonet/react-dropzone)
 react-infinite (infinite scroll)

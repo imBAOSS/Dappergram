@@ -95,7 +95,9 @@ class PhotoDetail extends React.Component {
 
           <div className='comments'>
 
-              <Comments comments={this.props.photo.comments}/>
+              <Comments
+                comments={this.props.photo.comments}
+                currentUser={this.props.currentUser}/>
 
           </div>
 
