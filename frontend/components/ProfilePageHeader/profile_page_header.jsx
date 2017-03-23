@@ -33,6 +33,8 @@ class ProfilePageHeader extends React.Component{
   }
 
   renderFollowButton() {
+    this.followButton = undefined;
+    console.log(this.followButton);
     if (this.props.session.currentUser) {
       if (this.props.session.currentUser.id !== this.props.user.id) {
         if (this.props.session.currentUser.followees.includes(this.props.user.id)) {
@@ -51,17 +53,17 @@ class ProfilePageHeader extends React.Component{
         }
       }
     }
+    console.log(this.followButton);
   }
 
   render() {
+    this.renderFollowButton();
 
     let numPosts = this.props.user.photos ? this.props.user.photos.length : "";
 
     let numFollowers = this.props.user.followers ? this.props.user.followers.length : "";
 
     let numFollowees = this.props.user.followees ? this.props.user.followees.length : "";
-
-    let followButton;
 
     if (this.props.session.currentUser) {
       if (this.props.session.currentUser.id !== this.props.user.id) {
