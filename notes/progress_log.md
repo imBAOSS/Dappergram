@@ -76,6 +76,8 @@ Implemented infinite scroll
 
 Finished photo filtering functionality via CSS rather than imagemagick. ImageMagick gave me a lot of issues installing, and a lot of time was wasted.
 
+Finished deleting comments feature.
+
 npm packages to consider:
 react-dropzone (https://github.com/okonet/react-dropzone)
 react-infinite (infinite scroll)
