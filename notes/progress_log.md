@@ -75,6 +75,7 @@ Implemented infinite scroll
 - Refactored reducer to not use window.currentUser.
 
 npm packages to consider:
+react-dropzone (https://github.com/okonet/react-dropzone)
 react-infinite (infinite scroll)
   (https://github.com/seatgeek/react-infinite)
 react-infinite-scroller (more up to date)

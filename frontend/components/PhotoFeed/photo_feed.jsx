@@ -26,11 +26,6 @@ class PhotoFeed extends React.Component {
     this.setState({ photos: nextProps.photos });
   }
 
-  componentWillMount() {
-    console.log('will mount');
-    // this.props.fetchPhotos();
-  }
-
   fetchMorePhotos() {
     if (this.state.photos[0]) {
       const created_at = this.state.photos[Object.keys(this.state.photos).length  - 1].created_at;

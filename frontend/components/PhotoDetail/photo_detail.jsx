@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Comments from '../Comment/comment';
+import Photo from './photo';
+import classNames from 'classnames';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
@@ -42,35 +44,18 @@ class PhotoDetail extends React.Component {
     this.setLikeIcon();
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   this.setLikeIcon();
-  //   this.numLikes = newProps.photo.likes.length;
-  // }
-
   updateComment() {
     return e => this.setState({body: e.target.value});
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props);
     this.props.createComment(this.state)
     .then(() => this.setState({body: ""}));
   }
 
   render() {
     this.setLikeIcon();
-    let comments = this.props.photo.comments.map( (comment, idx) => (
-      <li key={comment.id} className='comment-li'>
-        <Link
-          to={`/profile/${comment.user.id}`}
-          className='comment-username'>
-          {comment.user.username}
-        </Link>
-        <div className='comment-body'>{comment.body}</div>
-      </li>
-      )
-    );
 
     return (
       <div className='photo-detail'>
@@ -91,9 +76,8 @@ class PhotoDetail extends React.Component {
           </div>
         </div>
 
-        <div className="photo">
-          <img src={`${this.props.photo.photo_url}`}/>
-        </div>
+        <Photo url={this.props.photo.photo_url}/>
+
         <div className='photo-info'>
           <div className="num-likes">
             {this.props.photo.likesCount} likes
@@ -111,9 +95,7 @@ class PhotoDetail extends React.Component {
 
           <div className='comments'>
 
-              <ul>
-                { comments }
-              </ul>
+              <Comments comments={this.props.photo.comments}/>
 
           </div>
 
