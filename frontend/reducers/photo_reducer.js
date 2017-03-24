@@ -17,7 +17,10 @@ const PhotoFeedReducer = (oldState = {}, action) => {
       }
       return Object.assign(newState, photos);
     case RECEIVE_MORE_PHOTOS:
-    debugger;
+    console.log(`photo reducer`);
+    console.log(`newState: ${newState}`);
+    console.log(`action: ${action}`);
+    console.log('-----');
       let combinedPhotos = Object.keys(newState).map(id => newState[id]);
 
       let photoArr = combinedPhotos.concat(action.photos);

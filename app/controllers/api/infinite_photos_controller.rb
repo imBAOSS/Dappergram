@@ -4,6 +4,7 @@ class Api::InfinitePhotosController < ApplicationController
               .where("created_at < ?", params[:created_at])
               .order("created_at DESC")
               .limit(10)
+    puts @photos
     if @photos
       render 'api/photos/index'
     end
