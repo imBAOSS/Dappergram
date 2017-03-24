@@ -47,8 +47,9 @@ class SignUpForm extends React.Component {
   }
 
   guestLogIn() {
-    const user = {username: 'guest', password: 'guest_password'};
-    this.props.login(user);
+    // const user = {username: 'guest', password: 'guest_password'};
+    // this.props.login(user);
+    this.props.router.push('/login');
   }
 
   render() {
