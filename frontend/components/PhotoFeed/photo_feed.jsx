@@ -3,7 +3,6 @@ import { Link, withRouter, hashHistory } from 'react-router';
 import PhotoDetail from '../PhotoDetail/photo_detail';
 import InfiniteScroll from 'react-infinite-scroller';
 import PhotoDetailContainer from '../PhotoDetail/photo_detail_container';
-import * as PhotoAPIUtil from '../../util/photo_api_util';
 
 class PhotoFeed extends React.Component {
   constructor(props) {
@@ -29,8 +28,7 @@ class PhotoFeed extends React.Component {
   fetchMorePhotos() {
     if (this.state.photos[0]) {
       const created_at = this.state.photos[Object.keys(this.state.photos).length  - 1].created_at;
-      PhotoAPIUtil.fetchMorePhotos(created_at)
-      .then(photos => this.insertMorePhotos(photos));
+      this.props.fetchMorePhotos(created_at)
     } else {
       this.props.fetchPhotos();
     }

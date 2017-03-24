@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PhotoFeed from './photo_feed';
 import { logout } from "../../actions/session_actions";
-import { fetchPhotos } from '../../actions/photo_actions';
+import { fetchPhotos, fetchMorePhotos } from '../../actions/photo_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,6 +15,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     logout: () => dispatch(logout()),
     fetchPhotos: () => dispatch(fetchPhotos()),
+    fetchMorePhotos: created_at => dispatch(fetchMorePhotos(created_at))
   };
 };
 

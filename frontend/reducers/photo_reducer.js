@@ -1,4 +1,4 @@
-import { RECEIVE_PHOTOS } from '../actions/photo_actions';
+import { RECEIVE_PHOTOS, RECEIVE_MORE_PHOTOS } from '../actions/photo_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
@@ -16,6 +16,13 @@ const PhotoFeedReducer = (oldState = {}, action) => {
         });
       }
       return Object.assign(newState, photos);
+    case RECEIVE_MORE_PHOTOS:
+      let combinedPhotos = Object.keys(newState).map(id => newState[id]);
+
+      let photoArr = combinedPhotos.concat(action.photos);
+      let newPhotos = {};
+      photoArr.forEach((el, i) => newPhotos[i] = el);
+      return newPhotos;
     case RECEIVE_LIKE:
       Object.keys(newState).forEach(key => {
         if (newState[key].photoId === action.like.photo_id){
