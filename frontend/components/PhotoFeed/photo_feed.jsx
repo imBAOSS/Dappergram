@@ -50,10 +50,6 @@ class PhotoFeed extends React.Component {
   }
 
   render() {
-    let imageUrl;
-    if (this.props.session.currentUser) {
-      imageUrl = <img src={this.props.session.currentUser.photo_url}/>;
-    }
     let feed = Object.keys(this.state.photos).map(id => (
         <PhotoDetailContainer
           key={id}
