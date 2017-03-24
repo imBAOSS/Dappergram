@@ -14,10 +14,14 @@ export const receivePhoto = photo => ({
   photo
 });
 
-export const receiveMorePhotos = photos => ({
+export const receiveMorePhotos = photos => {
+  console.log(`photo actions`);
+  console.log(`action: ${photos}`);
+  console.log('-----');
+  return {
   type:RECEIVE_MORE_PHOTOS,
   photos
-})
+}};
 
 export const fetchPhotos = () => dispatch => (
   PhotoAPIUtil.fetchPhotos().then(photos => dispatch(receivePhotos(photos)))
