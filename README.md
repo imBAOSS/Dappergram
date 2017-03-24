@@ -1,7 +1,7 @@
 # Dappergram
 ======
 
-[Dapper.life][live link] is a web application inspired by Instagram designed for men's fashion enthusiast. DapperLife allows users to view, comment, like and follow their favorite users.
+[Dapper.life][live link] is a web application inspired by [Instagram][instagram] designed for men's fashion enthusiast. DapperLife allows users to view, comment, like and follow their favorite users.
 
 ## Features and Implementations
 ------
@@ -19,4 +19,5 @@
 
 
 [live link]: http://www.dapper.life/
+[instagram]: https://www.instagram.com/
 [login]: ./docs/images/login.gif
