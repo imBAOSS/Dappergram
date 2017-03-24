@@ -5,10 +5,6 @@ import { fetchPhotos, fetchMorePhotos } from '../../actions/photo_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(`mapStateToProps`);
-  console.log(`state.photos[0]: ${state.photoFeed[0]}`);
-  console.log(`state.photos[10]: ${state.photoFeed[10]}`);
-  console.log('-----');
   return {
     session: state.session,
     photos: state.photoFeed
