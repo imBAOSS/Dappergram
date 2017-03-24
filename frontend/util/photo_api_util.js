@@ -13,11 +13,9 @@ export const fetchPhoto = id => (
   })
 );
 
-export const fetchMorePhotos = created_at => {
-  console.log('ajax');
-  console.log(return $.ajax({
+export const fetchMorePhotos = created_at => {return $.ajax({
     method: 'GET',
     url: 'api/infinite_photos',
     data: {created_at}
-  }));
+  });
 };
