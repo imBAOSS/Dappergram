@@ -164,6 +164,10 @@ brighter() {
 </div>
 ```
 
+## Project Design
+
+## Technologies
+
 
 [live link]: http://www.dapper.life/
 [instagram]: https://www.instagram.com/
