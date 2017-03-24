@@ -78,6 +78,9 @@ Finished photo filtering functionality via CSS rather than imagemagick. ImageMag
 
 Finished deleting comments feature.
 
+### Day 10
+**BUG** Pushing to heroku broke infinite scrolling.
+
 npm packages to consider:
 react-dropzone (https://github.com/okonet/react-dropzone)
 react-infinite (infinite scroll)
