@@ -166,6 +166,8 @@ brighter() {
 
 ## Project Design
 
+A [proposal][proposal] was designed to present a feature implementation timeline.
+
 ## Technologies
 
 
@@ -176,3 +178,4 @@ brighter() {
 [infinite scroller]: https://github.com/CassetteRocks/react-infinite-scroller
 [image filter]:./docs/images/filter.gif
 [classnames]: https://github.com/JedWatson/classnames
+[proposal]: ./docs/README.md
