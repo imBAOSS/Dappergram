@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import NavBarContainer from './NavBar/nav_bar_container';
-import Video from './Video/video';
+import Footer from './Footer/footer';
 
 
 const App = ({ children, router }) => {
@@ -15,6 +15,7 @@ const App = ({ children, router }) => {
       <div id='root'>
         {navBar}
         {children}
+        <Footer />
       </div>
   );
 };

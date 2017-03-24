@@ -28,7 +28,7 @@ class PhotoFeed extends React.Component {
   fetchMorePhotos() {
     if (this.state.photos[0]) {
       const id = this.state.photos[Object.keys(this.state.photos).length  - 1].photoId;
-      this.props.fetchPhotos({photo_id: photoId})
+      this.props.fetchMorePhotos(id)
     } else {
       this.props.fetchPhotos();
     }

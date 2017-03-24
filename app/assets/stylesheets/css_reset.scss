@@ -26,6 +26,8 @@ ul, ol {
 }
 
 #root {
+  position: relative;
   width: 100%;
   height: 100vh;
+  padding: -50px;
 }
