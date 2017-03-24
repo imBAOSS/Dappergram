@@ -36,7 +36,7 @@ DapperLife uses secure BCrypt technology to salt and hash passwords into a diges
 
 ### Infinite Scrolling
 
-[Infinite Scroll][infinite]
+![Infinite Scroll][infinite]
 
 Renders only what the user needs or what is necessary with [React Infinite Scroller][infinite scroller]. Using infinite scroll, new photos are fetched only within a certain threshold from the end of the rendered view, allowing for resource conservation during browsing.
 
@@ -99,7 +99,7 @@ Renders only what the user needs or what is necessary with [React Infinite Scrol
 
 ### Image Filtering
 
-[Image Filter][image filter]
+![Image Filter][image filter]
 
 Utilizing the power of the [classnames][classnames] node package, users can enjoy some cool filters that can be applied to the photos. A slide in menu on the right side of each photo provides an abundant of filters that apply to individual photos for an enjoyable, creative experience.
 
@@ -172,7 +172,7 @@ brighter() {
 [live link]: http://www.dapper.life/
 [instagram]: https://www.instagram.com/
 [login]: ./docs/images/login.gif
-[infinite]:
+[infinite]: ./docs/images/infinite.gif
 [infinite scroller]: https://github.com/CassetteRocks/react-infinite-scroller
-[image filter]:
+[image filter]:./docs/images/filter.gif
 [classnames]: https://github.com/JedWatson/classnames
