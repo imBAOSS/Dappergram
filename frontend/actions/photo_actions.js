@@ -15,6 +15,7 @@ export const receivePhoto = photo => ({
 });
 
 export const receiveMorePhotos = photos => {
+  console.log(`${photos}`);
   return {
   type:RECEIVE_MORE_PHOTOS,
   photos
@@ -30,5 +31,5 @@ export const fetchPhoto = photo_id => dispatch => (
 
 export const fetchMorePhotos = created_at => dispatch => {
 return (
-  PhotoAPIUtil.fetchMorePhotos(created_at).then(photos => dispatch(receiveMorePhotos(photos)))
+  PhotoAPIUtil.fetchMorePhotos(created_at).then(photos => dispatch(receiveMorePhotos(photos))).fail(err => console.log(err.responseJSON))
 )};
