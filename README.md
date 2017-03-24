@@ -36,7 +36,7 @@ DapperLife uses secure BCrypt technology to salt and hash passwords into a diges
 
 ### Infinite Scrolling
 
-[infinite][infinite]
+[Infinite Scroll][infinite]
 
 Renders only what the user needs or what is necessary with [React Infinite Scroller][infinite scroller]. Using infinite scroll, new photos are fetched only within a certain threshold from the end of the rendered view, allowing for resource conservation during browsing.
 
@@ -99,8 +99,70 @@ Renders only what the user needs or what is necessary with [React Infinite Scrol
 
 ### Image Filtering
 
+[Image Filter][image filter]
 
+Utilizing the power of the [classnames][classnames] node package, users can enjoy some cool filters that can be applied to the photos. A slide in menu on the right side of each photo provides an abundant of filters that apply to individual photos for an enjoyable, creative experience.
 
+```js
+// photo.jsx
+// Local state that stores which filters are applied.
+this.state = {
+  filter: {
+    blur: false,
+    brighter: false,
+    darker: false,
+    contrast: false,
+    fade: false,
+    grayscale: false,
+    invert: false,
+    saturate: false,
+    sepia: false,
+    opacity: false
+  }
+}
+
+// Filters are applied by setting a new state to reflect changes.
+resetFilters() {
+  this.setState({
+    filter: {
+      blur: false,
+      brighter: false,
+      darker: false,
+      contrast: false,
+      fade: false,
+      grayscale: false,
+      invert: false,
+      saturate: false,
+      sepia: false,
+      opacity: false
+  }})
+}
+
+blur() {
+  this.setState({filter: {blur: true}});
+}
+
+brighter() {
+  this.setState({filter: {brighter: true}});
+}
+
+// More filters...
+
+// On click, functions to set state for respective filters are invoked.
+<div className='filter-menu'>
+  <button onClick={this.resetFilters}><p>Reset</p></button>
+  <button onClick={this.blur}>Blur</button>
+  <button onClick={this.brighter}>Brighter</button>
+  <button onClick={this.darker}>Darker</button>
+  <button onClick={this.contrast}>Contrast</button>
+  <button onClick={this.fade}>Fade</button>
+  <button onClick={this.grayscale}>Grayscale</button>
+  <button onClick={this.invert}>Invert</button>
+  <button onClick={this.saturate}>Saturate</button>
+  <button onClick={this.sepia}>Sepia</button>
+  <button onClick={this.opacity}>Opacity</button>
+</div>
+```
 
 
 [live link]: http://www.dapper.life/
@@ -109,3 +171,4 @@ Renders only what the user needs or what is necessary with [React Infinite Scrol
 [infinite]:
 [infinite scroller]: https://github.com/CassetteRocks/react-infinite-scroller
 [image filter]:
+[classnames]: https://github.com/JedWatson/classnames
