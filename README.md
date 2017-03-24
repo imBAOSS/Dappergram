@@ -2,11 +2,33 @@
 
 [Dapper.life][live link] is a web application inspired by [Instagram][instagram] designed for men's fashion enthusiast. DapperLife allows users to view, comment, like and follow their favorite users utilizing a Ruby on Rails backend with PostgreSQL database and a React/Redux frontend.
 
-## Features and Implementations
+## Features Highlight
 
-### Authentication
+### Secure Authentication
+
+When users visit [Dapper.life][live link], they're greeted with a beautiful and intuitive login page.
 
 ![Login Demo][login]
+
+### Infinite Scrolling
+
+Dapper.Life is designed to be efficient with resources, allowing for a smoother feel while browsing the feed. With infinite scrolling, only a set amount of photos are loaded at a given time.
+
+![Infinite Scroll][infinite]
+
+### Photo Filtering
+
+Users can enjoy some cool filters that can be applied to the photos. A slide in menu on the right side of each photo provides an abundant of filters that apply to individual photos for an enjoyable, creative experience.
+
+
+
+
+
+
+
+
+
+
 
 DapperLife uses secure BCrypt technology to salt and hash passwords into a digest where it is then saved into the database. To sign up for an account, the required fields include `username`, `email`, and `password`. While `password` is required, it is not saved on the database, only the digested password is saved. Upon login or account creation, the user is logged in with a `session_token`. The `session_token` is reset upon logout.
 
@@ -36,7 +58,7 @@ DapperLife uses secure BCrypt technology to salt and hash passwords into a diges
 
 ### Infinite Scrolling
 
-![Infinite Scroll][infinite]
+
 
 Renders only what the user needs or what is necessary with [React Infinite Scroller][infinite scroller]. Using infinite scroll, new photos are fetched only within a certain threshold from the end of the rendered view, allowing for resource conservation during browsing.
 
