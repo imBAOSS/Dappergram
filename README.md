@@ -166,7 +166,12 @@ brighter() {
 
 ## Project Design
 
-A [proposal][proposal] was designed to present a feature implementation timeline.
+A [proposal][proposal] was designed to present a feature implementation timeline. The proposal included:
+- Wireframes
+- Component Hierarchy
+- Sample State
+- database schema
+- API endpoints
 
 ## Technologies
 
