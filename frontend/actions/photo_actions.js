@@ -31,5 +31,8 @@ export const fetchPhoto = photo_id => dispatch => (
 
 export const fetchMorePhotos = created_at => dispatch => {
 return (
-  PhotoAPIUtil.fetchMorePhotos(created_at).then(photos => dispatch(receiveMorePhotos(photos)))
+  PhotoAPIUtil.fetchMorePhotos(created_at).then(photos => {
+    console.log(photos);
+    return dispatch(receiveMorePhotos(photos));
+  })
 )};
