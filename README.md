@@ -175,6 +175,15 @@ A [proposal][proposal] was designed to present a feature implementation timeline
 
 ## Technologies
 
+Ruby on Rails was utilized on the backend with PostgreSQL. Information was sent to the frontend in json, where it is processed in the Redux cycle. The React containers and components then drew information from the state in order to render views. Images are stored via Amazon Simple Storage Services(S3).
+
+## Future Implementations
+
+- Photo Deletion, Updates and Uploads
+- Hashtags
+- Search for Users and Hashtags
+- Direct Messaging
+- Discover Page
 
 [live link]: http://www.dapper.life/
 [instagram]: https://www.instagram.com/
