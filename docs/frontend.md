@@ -12,8 +12,7 @@ All React.js component and containers, Redux action creators, API utilities, sto
 ## jQuery
 Ajax requests were used to retrieve data from the Rails server.
 
-## Other
-Other frontend dependencies:
+## Opensource React Libraries
 - React DOM
 - React Router
 - Babel is used to transpile JSX into Javascript

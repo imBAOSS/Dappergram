@@ -15,7 +15,6 @@ export const receivePhoto = photo => ({
 });
 
 export const receiveMorePhotos = photos => {
-  console.log(`${photos}`);
   return {
   type:RECEIVE_MORE_PHOTOS,
   photos

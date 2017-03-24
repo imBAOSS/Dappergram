@@ -28,8 +28,8 @@ A [proposal][proposal] was designed to present a feature implementation timeline
 - Wireframes
 - Component Hierarchy
 - Sample State
-- database schema
-- API endpoints
+- Database Schema
+- API Endpoints
 
 ## Technologies
 
