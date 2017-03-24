@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 // react router
-import { Router, Route, IndexRedirect, hashHistory } from 'react-router';
+import { Router, Route, IndexRedirect, hashHistory, IndexRoute } from 'react-router';
 
 // react components
 import App from './App';
@@ -31,9 +31,8 @@ const Root = ({store}) => {
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path="/" component={ NavBarContainer }/>
         <Route path="/" component={ App }>
-          <IndexRedirect to="/login"/>
+          <IndexRedirect to='/login'/>
           <Route path="/signup" component={ AuthFormContainer } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/login" component={ AuthFormContainer } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/feed" component={ PhotoFeedContainer } onEnter={ _ensureLoggedIn }/>

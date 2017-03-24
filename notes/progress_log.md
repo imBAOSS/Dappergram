@@ -70,7 +70,7 @@ Also fixed follower and following updating methods by returning only the new use
 Implemented infinite scroll
 
 ### Day 9
-**BUG** Upon initial login, currentUser isn't set to window.
+**BUGSOLVED** Upon initial login, currentUser isn't set to window.
 - Possibly Object.assign user upon receive_user instead of only returning new user?
 - Refactored reducer to not use window.currentUser.
 
