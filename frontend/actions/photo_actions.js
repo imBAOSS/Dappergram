@@ -28,10 +28,6 @@ export const fetchPhoto = photo_id => dispatch => (
 );
 
 export const fetchMorePhotos = created_at => dispatch => {
-
-  console.log(`photo actions`);
-  console.log(`created_at: ${created_at}`);
-  console.log('-----');
 return (
   PhotoAPIUtil.fetchMorePhotos(created_at).then(photos => dispatch(receiveMorePhotos(photos)))
 )};

@@ -14,12 +14,10 @@ export const fetchPhoto = id => (
 );
 
 export const fetchMorePhotos = created_at => {
-  console.log('ajax request');
-  console.log(`created_at: ${created_at}`);
-  console.log('-----');
-  return $.ajax({
+  console.log('ajax');
+  console.log(return $.ajax({
     method: 'GET',
     url: 'api/infinite_photos',
     data: {created_at}
-  })
+  }));
 };
