@@ -8,12 +8,6 @@
 
 # Seed Users
 
-User.destroy_all
-Photo.destroy_all
-Follow.destroy_all
-Like.destroy_all
-Comment.destroy_all
-
 profile_list = File.readlines(File.join(Rails.root, 'db', 'profile_photo_names.txt')).first.split("\r")
 profile_prefix = 'https://s3.amazonaws.com/dappergram-dev/users/profile_photos/'
 profile_photos = profile_list.map { |file_name| profile_prefix + file_name}

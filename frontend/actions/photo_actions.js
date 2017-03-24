@@ -27,6 +27,8 @@ export const fetchPhoto = photo_id => dispatch => (
   PhotoAPIUtil.fetchPhoto(photo_id).then(photo => dispatch(receivePhoto(photo)))
 );
 
-export const fetchMorePhotos = created_at => dispatch => (
+export const fetchMorePhotos = created_at => dispatch => {
+  debugger;
+return (
   PhotoAPIUtil.fetchMorePhotos(created_at).then(photos => dispatch(receiveMorePhotos(photos)))
-);
+)};
