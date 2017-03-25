@@ -1,38 +1,52 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Footer = () => {
   return(
     <div className='footer-bar'>
       <div className='footer-links'>
         <div className='about'>
-          About
+          <Link
+            className='about-link'
+            to='/about'>About</Link>
         </div>
         <div className='github-repo'>
-          Github
+          <a
+            className='github-link'
+            href='https://github.com/imBAOSS/Dappergram/'>Github</a>
         </div>
         <div className='portfolio-website'>
-          Website
+          <a
+            className='website-link'
+            href='http://www.imbaoss.com/'>Website</a>
         </div>
       </div>
 
       <div className='footer-icons'>
         <div className='github'>
           <a href="https://github.com/imbaoss">
-
+            <i className="fa fa-github fa-2x"></i>
           </a>
         </div>
         <div className='facebook'>
-          <a href="https://www.facebook.com/imbaoss"></a>
+          <a href="https://www.facebook.com/imbaoss">
+            <i className="fa fa-facebook-official fa-2x"></i>
+          </a>
         </div>
         <div className='instagram'>
-          <a href="https://www.instagram.com/imbaoss/"></a>
+          <a href="https://www.instagram.com/imbaoss/">
+            <i className="fa fa-instagram fa-2x">
+            </i>
+          </a>
         </div>
         <div className='twitter'>
-          <a href="https://twitter.com/imbaoss"></a>
+          <a href="https://twitter.com/imbaoss">
+            <i className="fa fa-twitter fa-2x"></i>
+          </a>
         </div>
         <div className='email'>
           <a href="mailto:baole6989@gmail.com">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <i className="fa fa-envelope fa-2x"></i>
           </a>
         </div>
       </div>

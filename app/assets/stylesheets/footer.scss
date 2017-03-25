@@ -1,7 +1,8 @@
 .footer-bar {
   display: flex;
   flex-direction: row;
-  position: absolute;
+  justify-content: space-between;
+  position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
@@ -15,21 +16,46 @@
 .footer-links {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about,
+.github-repo,
+.portfolio-website {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  margin-left: 30px;
+  font-size: 15px;
+  line-height: 18px;
+  cursor: pointer;
+  font-weight: 600;
+  color: $darkest-gray;
+}
+.about-link,
+.github-link,
+.website-link {
+  color: $darkest-gray;
+}
+
+.about-link:hover,
+.github-link:hover,
+.website-link:hover {
+  font-size: 17px;
 }
 
 .footer-icons {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  width: auto;
   height: 100%;
 }
 
-.email {
-  height: 50px;
-  width: 50px;
-}
-
-a, i {
-  height: 50px;
-  width: 50px;
+i {
+  color: $darkest-gray;
+  margin-right: 20px;
 }

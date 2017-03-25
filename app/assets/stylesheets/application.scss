@@ -29,6 +29,9 @@
  $proxima-nova: "proxima-nova",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
  $cookie-cursive: 'Cookie', cursive;
 
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
  @import "css_reset"; // 1
  @import url('https://fonts.googleapis.com/css?family=Cookie'); // 2
  @import "nav_bar"; // 3
