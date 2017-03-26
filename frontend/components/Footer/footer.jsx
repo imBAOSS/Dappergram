@@ -25,28 +25,28 @@ const Footer = () => {
       <div className='footer-icons'>
         <div className='github'>
           <a href="https://github.com/imbaoss">
-            <i className="fa fa-github fa-2x"></i>
+            <i className="fa fa-github fa-lg"></i>
           </a>
         </div>
         <div className='facebook'>
           <a href="https://www.facebook.com/imbaoss">
-            <i className="fa fa-facebook-official fa-2x"></i>
+            <i className="fa fa-facebook-official fa-lg"></i>
           </a>
         </div>
         <div className='instagram'>
           <a href="https://www.instagram.com/imbaoss/">
-            <i className="fa fa-instagram fa-2x">
+            <i className="fa fa-instagram fa-lg">
             </i>
           </a>
         </div>
         <div className='twitter'>
           <a href="https://twitter.com/imbaoss">
-            <i className="fa fa-twitter fa-2x"></i>
+            <i className="fa fa-twitter fa-lg"></i>
           </a>
         </div>
         <div className='email'>
           <a href="mailto:baole6989@gmail.com">
-            <i className="fa fa-envelope fa-2x"></i>
+            <i className="fa fa-envelope fa-lg"></i>
           </a>
         </div>
       </div>
