@@ -81,6 +81,9 @@ Finished deleting comments feature.
 ### Day 10
 **BUG** Pushing to heroku broke infinite scrolling.
 
+### Day 11
+Tested explicit sql queries for infinite scrolling.
+
 npm packages to consider:
 react-dropzone (https://github.com/okonet/react-dropzone)
 react-infinite (infinite scroll)
