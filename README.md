@@ -1,6 +1,6 @@
 # Dappergram
 
-[Dapper.life][live link] is a web application inspired by [Instagram][instagram] designed for men's fashion enthusiast. DapperLife allows users to view, comment, like and follow their favorite users utilizing a Ruby on Rails backend with PostgreSQL database and a React/Redux frontend.
+[Dapper.life][live link] is a web application inspired by [Instagram][instagram] designed for fashion enthusiasts. DapperLife allows users to view, comment, like and follow their favorite users utilizing a Ruby on Rails backend with PostgreSQL database and a React/Redux frontend.
 
 ## Features Highlight
 
