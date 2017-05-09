@@ -98,7 +98,7 @@ class LogInForm extends React.Component {
       <div className="login-form">
         <div className="auth-header">
           <h1>DapperLife</h1>
-          <br/>
+          <h4>Sign up to share photos of the finer things in life.</h4>
         </div>
         <div>
           <button

@@ -59,7 +59,7 @@ class SignUpForm extends React.Component {
       <div className='signup-form'>
         <div className='auth-header'>
           <h1>DapperLife</h1>
-          <h4>Sign up to see photos of the dapper life.</h4>
+          <h4>Sign up to share photos of the finer things in life.</h4>
         </div>
         <div>
           <button

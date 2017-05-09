@@ -5,11 +5,6 @@ const Footer = () => {
   return(
     <div className='footer-bar'>
       <div className='footer-links'>
-        <div className='about'>
-          <Link
-            className='about-link'
-            to='/about'>About</Link>
-        </div>
         <div className='github-repo'>
           <a
             className='github-link'
