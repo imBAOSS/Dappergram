@@ -28,6 +28,16 @@ const Footer = () => {
             <i className="fa fa-github fa-lg"></i>
           </a>
         </div>
+        <div className='linkedin'>
+          <a href="https://www.linkedin.com/in/bao-le/">
+            <i className="fa fa-linkedin fa-lg"></i>
+          </a>
+        </div>
+        <div className='angellist'>
+          <a href="https://angel.co/imbaoss">
+            <i className="fa fa-angellist fa-lg"></i>
+          </a>
+        </div>
         <div className='facebook'>
           <a href="https://www.facebook.com/imbaoss">
             <i className="fa fa-facebook-official fa-lg"></i>
